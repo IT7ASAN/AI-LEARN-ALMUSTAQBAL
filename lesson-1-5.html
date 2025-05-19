@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5 – Simple Reading and Writing | English Literacy Course</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Word Lists */
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .word-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 12px 15px;
+            font-size: 1.1rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .word-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        /* Sentence Practice */
+        .sentence-card {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        /* Writing Practice */
+        .writing-practice {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .writing-card {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .writing-line {
+            height: 2px;
+            background: var(--gray-medium);
+            margin: 10px 0;
+        }
+
+        /* Fill in Blanks */
+        .blank-exercise {
+            background-color: var(--yellow-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+        }
+
+        .blank-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .blank-option {
+            background-color: var(--gray-light);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 10px;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(44, 90, 125, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-next {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-next:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Section Buttons */
+        .section-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .read-btn {
+            background-color: var(--primary-light);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .video-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Highlight Text */
+        .highlight {
+            background-color: var(--yellow-bg);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Encouragement Section */
+        .encouragement-section {
+            text-align: center;
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .word-list {
+                justify-content: center;
+            }
+            
+            .section-buttons {
+                justify-content: center;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 5 – Simple Reading and Writing</h2>
+            <p>Learn to read simple words and sentences, and practice basic writing skills.</p>
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Child writing in notebook with colorful pencils" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p class="highlight">Reading and writing are fundamental skills that open doors to learning. Today we'll build confidence with simple words and sentences!</p>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Recognize and read simple words and short sentences</li>
+                        <li>Write basic words and complete short sentences</li>
+                        <li>Practice reading aloud and writing neatly</li>
+                    </ul>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('objective')">
+                            <i class="fas fa-volume-up"></i> Read This Section
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=YdBtJb0xRqY" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Watch Intro Video
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simple Words Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📘</span> 1. Simple Words for Reading</h2>
+                <div class="section-content">
+                    <p class="highlight">These basic words are the building blocks of reading. Practice them until you recognize them instantly!</p>
+                    
+                    <div class="word-list">
+                        <div class="word-card" onclick="playWordAudio('cat')">cat</div>
+                        <div class="word-card" onclick="playWordAudio('dog')">dog</div>
+                        <div class="word-card" onclick="playWordAudio('sun')">sun</div>
+                        <div class="word-card" onclick="playWordAudio('pen')">pen</div>
+                        <div class="word-card" onclick="playWordAudio('cup')">cup</div>
+                        <div class="word-card" onclick="playWordAudio('bag')">bag</div>
+                        <div class="word-card" onclick="playWordAudio('book')">book</div>
+                        <div class="word-card" onclick="playWordAudio('hat')">hat</div>
+                        <div class="word-card" onclick="playWordAudio('bed')">bed</div>
+                        <div class="word-card" onclick="playWordAudio('box')">box</div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Read each word aloud after the teacher. Try to read them without help!</p>
+                        <p><em>Challenge:</em> Can you think of other words that rhyme with these?</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('words')">
+                            <i class="fas fa-volume-up"></i> Read All Words
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=3FdDkqQqJ2E" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Word Practice Video
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Word Match Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Puzzle">🧩</span> 2. Word and Picture Match</h2>
+                <div class="section-content">
+                    <p class="highlight">Matching words to pictures helps your brain connect the written word with its meaning.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0;">
+                        <div>
+                            <h4>Words:</h4>
+                            <div class="word-list">
+                                <div class="word-card">cat</div>
+                                <div class="word-card">dog</div>
+                                <div class="word-card">sun</div>
+                                <div class="word-card">cup</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Pictures:</h4>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                                <div style="background: #f5f5f5; height: 80px; border-radius: var(--border-radius); display: flex; justify-content: center; align-items: center;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/6176/6176888.png" alt="Cat" style="height: 50px;">
+                                </div>
+                                <div style="background: #f5f5f5; height: 80px; border-radius: var(--border-radius); display: flex; justify-content: center; align-items: center;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dog" style="height: 50px;">
+                                </div>
+                                <div style="background: #f5f5f5; height: 80px; border-radius: var(--border-radius); display: flex; justify-content: center; align-items: center;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sun" style="height: 50px;">
+                                </div>
+                                <div style="background: #f5f5f5; height: 80px; border-radius: var(--border-radius); display: flex; justify-content: center; align-items: center;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3183/3183443.png" alt="Cup" style="height: 50px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Drag each word to match with the correct picture. Say the word aloud as you match it!</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('matching')">
+                            <i class="fas fa-volume-up"></i> Matching Instructions
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=7Z3h6U8n1fI" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Matching Game Demo
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Sentences Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Read Simple Sentences</h2>
+                <div class="section-content">
+                    <p class="highlight">Now let's put words together to make sentences. Read slowly and point to each word as you say it.</p>
+                    
+                    <div class="sentence-card">
+                        <p>This is a cat.</p>
+                        <p>I have a pen.</p>
+                        <p>It is a big bag.</p>
+                        <p>She has a book.</p>
+                        <p>The sun is hot.</p>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Read aloud with your partner. Take turns reading sentences.</p>
+                        <p><em>Tip:</em> Try changing the words to make new sentences (e.g., "This is a dog")</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('sentences')">
+                            <i class="fas fa-volume-up"></i> Read Sentences
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=0nBIDFlJ6A8" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Sentence Practice
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Writing Practice Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Words and Sentences</h2>
+                <div class="section-content">
+                    <p class="highlight">Writing helps reinforce what you're learning. Focus on forming letters correctly and writing neatly.</p>
+                    
+                    <h4>Words to Practice:</h4>
+                    <div class="writing-practice">
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">cat</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">dog</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">cup</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">hat</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                    </div>
+                    
+                    <h4>Sentences to Practice:</h4>
+                    <div class="writing-practice">
+                        <div class="writing-card">
+                            <p style="font-size: 1.2rem;">I see a dog.</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.2rem;">The cup is red.</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('writing')">
+                            <i class="fas fa-volume-up"></i> Writing Tips
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=YQcdQ0zYH7A" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Writing Tutorial
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fill in Blanks Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Worksheet">📝</span> 5. Fill in the Blanks</h2>
+                <div class="section-content">
+                    <p class="highlight">This activity helps you think about which words make sense in different sentences.</p>
+                    
+                    <div class="blank-exercise">
+                        <p>This is a ______. (cat/dog)</p>
+                        <div class="blank-options">
+                            <div class="blank-option" onclick="fillBlank(this, 'cat')">cat</div>
+                            <div class="blank-option" onclick="fillBlank(this, 'dog')">dog</div>
+                        </div>
+                    </div>
+                    
+                    <div class="blank-exercise">
+                        <p>I have a ______. (pen/book)</p>
+                        <div class="blank-options">
+                            <div class="blank-option" onclick="fillBlank(this, 'pen')">pen</div>
+                            <div class="blank-option" onclick="fillBlank(this, 'book')">book</div>
+                        </div>
+                    </div>
+                    
+                    <div class="blank-exercise">
+                        <p>The sun is ______. (hot/cold)</p>
+                        <div class="blank-options">
+                            <div class="blank-option" onclick="fillBlank(this, 'hot')">hot</div>
+                            <div class="blank-option" onclick="fillBlank(this, 'cold')">cold</div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Choose the correct word and write it. Then read the complete sentence aloud.</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('blanks')">
+                            <i class="fas fa-volume-up"></i> Exercise Instructions
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=ZKIqAJJShl8" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Fill-in-Blanks Demo
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Aloud Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Megaphone">📢</span> 6. Reading Aloud Practice</h2>
+                <div class="section-content">
+                    <p class="highlight">Reading aloud helps with pronunciation and builds confidence in speaking English.</p>
+                    
+                    <div class="sentence-card">
+                        <p>Choose one of these to read:</p>
+                        <ul>
+                            <li>This is my cat.</li>
+                            <li>I have a red pen.</li>
+                            <li>The dog is big.</li>
+                            <li>She has a book.</li>
+                            <li>My cup is blue.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Read your favorite word or sentence to the class. Speak clearly and loudly!</p>
+                        <p><em>Tip:</em> Stand up straight and take a deep breath before you start.</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('reading-aloud')">
+                            <i class="fas fa-volume-up"></i> Reading Tips
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=4kEO7VjKRB8" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Reading Aloud Example
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Word Hunt Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Magnifying Glass">🔍</span> 7. Word Hunt Game</h2>
+                <div class="section-content">
+                    <p class="highlight">Words are all around us! This game helps you recognize words in everyday life.</p>
+                    
+                    <div class="word-list">
+                        <div class="word-card">cup</div>
+                        <div class="word-card">book</div>
+                        <div class="word-card">pen</div>
+                        <div class="word-card">bag</div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Find words around the classroom or house:</p>
+                        <p><em>Example:</em> Find the word 'cup' on a real cup.</p>
+                        <p><em>Challenge:</em> Can you find all four words?</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('word-hunt')">
+                            <i class="fas fa-volume-up"></i> Game Instructions
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=9HkqQfWqs0w" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Word Hunt Demo
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📋</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <p class="highlight">You've made great progress today! Let's review what we learned.</p>
+                    
+                    <p><strong>Today we learned:</strong></p>
+                    <ul>
+                        <li>How to read simple words and sentences</li>
+                        <li>How to write neatly</li>
+                        <li>How to match words with pictures</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Write 5 new words and use them in sentences</li>
+                            <li>Read one short sentence to your family</li>
+                        </ol>
+                        <p style="margin-top: 10px;"><em>Extra challenge:</em> Find and write down 3 words you see at home.</p>
+                    </div>
+                    
+                    <div class="section-buttons">
+                        <a href="#" class="read-btn" onclick="readSection('recap')">
+                            <i class="fas fa-volume-up"></i> Lesson Summary
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=8mLqIkY6ZqU" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Review Video
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="encouragement-section">
+                <h2 class="section-title"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.2rem;"><span role="img" aria-label="Sparkles">✨</span> You're learning how to read and write – great job!</p>
+                    <p>Practice every day to become even better!</p>
+                    
+                    <div class="section-buttons" style="justify-content: center;">
+                        <a href="#" class="read-btn" onclick="readSection('encouragement')">
+                            <i class="fas fa-volume-up"></i> Listen
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=3dP8TK2w0R4" class="video-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Celebration Song
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <div class="action-buttons" style="margin-top: 20px;">
+                <a href="../../../course.html" class="btn btn-next">
+                    <i class="fas fa-arrow-right"></i> Next Lesson: Family Members
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Audio files for words (placeholder paths - would be real in implementation)
+        const wordAudios = {
+            'cat': 'https://www.soundjay.com/mechanical/sounds/cat-meow-01.mp3',
+            'dog': 'https://www.soundjay.com/mechanical/sounds/dog-barking-01.mp3',
+            'sun': 'https://www.soundjay.com/nature/sounds/sun-01.mp3',
+            'pen': 'https://www.soundjay.com/mechanical/sounds/pen-click-01.mp3',
+            'cup': 'https://www.soundjay.com/mechanical/sounds/cup-01.mp3',
+            'bag': 'https://www.soundjay.com/mechanical/sounds/zipper-01.mp3',
+            'book': 'https://www.soundjay.com/mechanical/sounds/book-page-01.mp3',
+            'hat': 'https://www.soundjay.com/mechanical/sounds/fabric-01.mp3',
+            'bed': 'https://www.soundjay.com/mechanical/sounds/bed-01.mp3',
+            'box': 'https://www.soundjay.com/mechanical/sounds/box-01.mp3',
+            'hot': 'https://www.soundjay.com/nature/sounds/fire-01.mp3',
+            'cold': 'https://www.soundjay.com/nature/sounds/wind-01.mp3'
+        };
+        
+        // Function to play word audio
+        function playWordAudio(word) {
+            if (wordAudios[word]) {
+                const audio = new Audio(wordAudios[word]);
+                audio.play();
+                
+                // Visual feedback
+                const element = event.target;
+                element.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    element.style.transform = 'scale(1)';
+                }, 200);
+            } else {
+                // In a real implementation, this would use text-to-speech
+                alert("The word is: " + word);
+            }
+        }
+        
+        // Function to fill in blanks
+        function fillBlank(element, word) {
+            const sentence = element.parentElement.previousElementSibling;
+            const blankIndex = sentence.textContent.indexOf('______');
+            const newText = sentence.textContent.replace('______', word);
+            sentence.textContent = newText;
+            
+            // Visual feedback
+            element.style.backgroundColor = '#4CAF50';
+            element.style.color = 'white';
+            
+            // Play word audio if available
+            if (wordAudios[word]) {
+                const audio = new Audio(wordAudios[word]);
+                audio.play();
+            }
+        }
+        
+        // Function to simulate reading sections aloud
+        function readSection(section) {
+            let text = '';
+            switch(section) {
+                case 'objective':
+                    text = "Reading and writing are fundamental skills that open doors to learning. By the end of this lesson, you will be able to: Recognize and read simple words and short sentences, Write basic words and complete short sentences, Practice reading aloud and writing neatly";
+                    break;
+                case 'words':
+                    text = "Practice these words: cat, dog, sun, pen, cup, bag, book, hat, bed, box. Read each word aloud after the teacher.";
+                    break;
+                case 'matching':
+                    text = "Match each word with the correct picture. Drag cat to the cat picture, dog to the dog picture, and so on. Say the word aloud as you match it.";
+                    break;
+                case 'sentences':
+                    text = "Read these sentences: This is a cat. I have a pen. It is a big bag. She has a book. The sun is hot.";
+                    break;
+                case 'writing':
+                    text = "Practice writing these words: cat, dog, cup, hat. Then write these sentences: I see a dog. The cup is red. Write slowly and carefully.";
+                    break;
+                case 'blanks':
+                    text = "Fill in the blanks with the correct word. This is a cat or dog? I have a pen or book? The sun is hot or cold? Choose the word that makes sense.";
+                    break;
+                case 'reading-aloud':
+                    text = "Choose a sentence to read aloud: This is my cat. I have a red pen. The dog is big. She has a book. My cup is blue. Speak clearly and confidently!";
+                    break;
+                case 'word-hunt':
+                    text = "Find these words around you: cup, book, pen, bag. Look for them on objects in your classroom or home.";
+                    break;
+                case 'recap':
+                    text = "Today we learned to read words and sentences, write neatly, and match words with pictures. For homework, write 5 new words and read a sentence to your family.";
+                    break;
+                case 'encouragement':
+                    text = "Great job learning to read and write! Keep practicing every day to become even better!";
+                    break;
+            }
+            
+            if (text) {
+                // In a real implementation, this would use the Web Speech API
+                alert("In a real application, this would read aloud:\n\n" + text);
+                // const utterance = new SpeechSynthesisUtterance(text);
+                // speechSynthesis.speak(utterance);
+            }
+        }
+        
+        // Initialize any interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Additional initialization if needed
+        });
+    </script>
+</body>
+
+</html>

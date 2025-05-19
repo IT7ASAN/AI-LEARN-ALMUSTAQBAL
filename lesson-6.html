@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 6 – Technology and Everyday Tools | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --blue-bg: #e3f2fd;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--blue-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+            color: #7b1fa2;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 6 – Technology and Everyday Tools</h2>
+            <p>Learn to identify and talk about technology and tools in English.</p>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Technology and tools" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Identify and name basic technology and tools used daily</li>
+                        <li>Use simple sentences to describe what tools and devices do</li>
+                        <li>Ask for help using or borrowing tools politely</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Devices">📱</span> 1. Vocabulary: Technology and Tools</h2>
+                <div class="section-content">
+                    <h3>📱 Devices:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="phone-audio">
+                            <span role="img" aria-label="Phone" style="font-size: 2rem;">📱</span>
+                            <h3>phone</h3>
+                            <p>/foʊn/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="laptop-audio">
+                            <span role="img" aria-label="Laptop" style="font-size: 2rem;">💻</span>
+                            <h3>laptop</h3>
+                            <p>/ˈlæptɒp/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="tablet-audio">
+                            <span role="img" aria-label="Tablet" style="font-size: 2rem;">📲</span>
+                            <h3>tablet</h3>
+                            <p>/ˈtæblət/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="charger-audio">
+                            <span role="img" aria-label="Charger" style="font-size: 2rem;">🔌</span>
+                            <h3>charger</h3>
+                            <p>/ˈtʃɑːrdʒər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="tv-audio">
+                            <span role="img" aria-label="TV" style="font-size: 2rem;">📺</span>
+                            <h3>TV</h3>
+                            <p>/ˌtiːˈviː/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="remote-audio">
+                            <span role="img" aria-label="Remote" style="font-size: 2rem;">🖲️</span>
+                            <h3>remote</h3>
+                            <p>/rɪˈmoʊt/</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 20px;">🛠️ Tools:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="key-audio">
+                            <span role="img" aria-label="Key" style="font-size: 2rem;">🔑</span>
+                            <h3>key</h3>
+                            <p>/kiː/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="scissors-audio">
+                            <span role="img" aria-label="Scissors" style="font-size: 2rem;">✂️</span>
+                            <h3>scissors</h3>
+                            <p>/ˈsɪzərz/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="broom-audio">
+                            <span role="img" aria-label="Broom" style="font-size: 2rem;">🧹</span>
+                            <h3>broom</h3>
+                            <p>/bruːm/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="pen-audio">
+                            <span role="img" aria-label="Pen" style="font-size: 2rem;">🖊️</span>
+                            <h3>pen</h3>
+                            <p>/pen/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="flashlight-audio">
+                            <span role="img" aria-label="Flashlight" style="font-size: 2rem;">🔦</span>
+                            <h3>flashlight</h3>
+                            <p>/ˈflæʃlaɪt/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="watch-audio">
+                            <span role="img" aria-label="Watch" style="font-size: 2rem;">⌚</span>
+                            <h3>watch</h3>
+                            <p>/wɒtʃ/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match each word to a picture or real object:</p>
+                        <div class="vocabulary-grid">
+                            <div class="vocab-card" data-item="phone">
+                                <p>📱</p>
+                                <input type="text" placeholder="Type the word" style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                            </div>
+                            <div class="vocab-card" data-item="scissors">
+                                <p>✂️</p>
+                                <input type="text" placeholder="Type the word" style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                            </div>
+                            <div class="vocab-card" data-item="key">
+                                <p>🔑</p>
+                                <input type="text" placeholder="Type the word" style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">🧠</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Structures to Practice:</h3>
+                    <div style="background-color: var(--green-bg); padding: 15px; border-radius: var(--border-radius); margin: 15px 0;">
+                        <p><strong>Can I use your phone?</strong></p>
+                        <p><strong>I need a charger.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Fill in the blanks:</p>
+                        <ol>
+                            <li>Can I use your <input type="text" style="padding: 3px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">?</li>
+                            <li>I need a <input type="text" style="padding: 3px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);"> to write.</li>
+                            <li>Can you pass me the <input type="text" style="padding: 3px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Reading">📄</span> Reading Paragraph</h3>
+                        <p><strong>This is my phone. I use it to call my family. I also have a laptop. I use it to study. My flashlight helps me when it is dark.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension Questions</h3>
+                        <ol>
+                            <li>What does he use the phone for?</li>
+                            <li>When does he use the flashlight?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Example">📝</span> Example Sentences</h3>
+                        <p><strong>I have a pen. I use it to write. I also have a watch.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Write 3 simple sentences about your favorite tools or devices:</p>
+                        <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);" placeholder="Example: I have a phone. I use it to call my friends."></textarea>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--primary-color);">🖼️ Use pictures or objects to support writing</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Dialogue">💬</span> Roleplay</h3>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>Can I use your charger?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>Sure. Here it is.</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>Thank you!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Practice with props or flashcards:</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-mobile-alt"></i> Phone Card
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-key"></i> Key Card
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-pen"></i> Pen Card
+                            </button>
+                        </div>
+                        <p style="margin-top: 10px; font-style: italic;">🎭 Encourage polite tone and natural conversation</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen to descriptions and point to the correct picture:</p>
+                        
+                        <div class="vocabulary-grid" style="margin-top: 20px;">
+                            <div class="vocab-card" data-item="flashlight">
+                                <span role="img" aria-label="Flashlight" style="font-size: 2rem;">🔦</span>
+                                <h3>?</h3>
+                            </div>
+                            <div class="vocab-card" data-item="remote">
+                                <span role="img" aria-label="Remote" style="font-size: 2rem;">🖲️</span>
+                                <h3>?</h3>
+                            </div>
+                            <div class="vocab-card" data-item="scissors">
+                                <span role="img" aria-label="Scissors" style="font-size: 2rem;">✂️</span>
+                                <h3>?</h3>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 20px;">Example Prompts:</h3>
+                        <ol>
+                            <li>"He uses a flashlight at night."</li>
+                            <li>"She needs the remote to change the channel."</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🔍</span> 7. Fun Activity: Tool & Tech Hunt</h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Search your classroom or home</li>
+                        <li>Find 3 tools or devices</li>
+                        <li>Say what they are and what they are used for</li>
+                    </ul>
+                    
+                    <div class="practice-section">
+                        <h3>Example Report:</h3>
+                        <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <p><em>This is a broom. I use it to clean.</em></p>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <h3>Found Items:</h3>
+                            <ol>
+                                <li><input type="text" placeholder="Item name" style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);"> - <input type="text" placeholder="Used for..." style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius); width: 200px;"></li>
+                                <li><input type="text" placeholder="Item name" style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);"> - <input type="text" placeholder="Used for..." style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius); width: 200px;"></li>
+                                <li><input type="text" placeholder="Item name" style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);"> - <input type="text" placeholder="Used for..." style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius); width: 200px;"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📚</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>Technology and tool names</li>
+                        <li>How to ask politely to use something</li>
+                        <li>Sentences to describe what tools do</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Draw two tools</li>
+                            <li>Write their names and what they are used for</li>
+                            <li>Ask someone at home: "Can I use your ___?"</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Great work today!</strong></p>
+                    <p>Using tools and tech in English helps you in real life.</p>
+                    <p style="margin-top: 10px;"><strong>Keep exploring and practicing new words every day!</strong> <span role="img" aria-label="Tools">🛠️</span><span role="img" aria-label="Phone">📱</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-7.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit6-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit6-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit6-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit6-reading.mp3',
+                    'writing': 'https://example.com/audio/unit6-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit6-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit6-listening.mp3',
+                    'recap': 'https://example.com/audio/unit6-recap.mp3',
+                    // Vocabulary audio
+                    'phone-audio': 'https://example.com/audio/phone.mp3',
+                    'laptop-audio': 'https://example.com/audio/laptop.mp3',
+                    'tablet-audio': 'https://example.com/audio/tablet.mp3',
+                    'charger-audio': 'https://example.com/audio/charger.mp3',
+                    'tv-audio': 'https://example.com/audio/tv.mp3',
+                    'remote-audio': 'https://example.com/audio/remote.mp3',
+                    'key-audio': 'https://example.com/audio/key.mp3',
+                    'scissors-audio': 'https://example.com/audio/scissors.mp3',
+                    'broom-audio': 'https://example.com/audio/broom.mp3',
+                    'pen-audio': 'https://example.com/audio/pen.mp3',
+                    'flashlight-audio': 'https://example.com/audio/flashlight.mp3',
+                    'watch-audio': 'https://example.com/audio/watch.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit6-intro',
+                    'vocabulary': 'https://youtube.com/unit6-vocabulary',
+                    'grammar': 'https://youtube.com/unit6-grammar',
+                    'reading': 'https://youtube.com/unit6-reading',
+                    'writing': 'https://youtube.com/unit6-writing',
+                    'speaking': 'https://youtube.com/unit6-speaking',
+                    'listening': 'https://youtube.com/unit6-listening',
+                    'recap': 'https://youtube.com/unit6-recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Vocabulary card clicks
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const audioId = this.getAttribute('data-audio');
+                    if (audioId) {
+                        audioManager.playSection(audioId);
+                    }
+                });
+            });
+
+            // Listening activity - tool identification
+            const listeningBtn = document.querySelector('[data-section="listening"]');
+            if (listeningBtn) {
+                listeningBtn.addEventListener('click', function() {
+                    // Random tools for demonstration
+                    const tools = ['flashlight', 'remote', 'scissors'];
+                    
+                    let currentIndex = 0;
+                    
+                    // Highlight tool every 3 seconds
+                    const interval = setInterval(() => {
+                        // Remove highlight from all
+                        document.querySelectorAll('.vocab-card').forEach(card => {
+                            card.style.boxShadow = 'none';
+                        });
+                        
+                        if (currentIndex < tools.length) {
+                            // Highlight current tool
+                            const currentTool = tools[currentIndex];
+                            const toolCard = document.querySelector(`[data-item="${currentTool}"]`);
+                            if (toolCard) {
+                                toolCard.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                            }
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 3000);
+                });
+            }
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

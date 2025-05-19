@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4 – Health and the Body | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --red-bg: #ffebee;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Body Diagram */
+        .body-diagram {
+            width: 200px;
+            height: 300px;
+            margin: 20px auto;
+            background-image: url('https://cdn.pixabay.com/photo/2017/08/02/00/52/people-2567915_960_720.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+
+        .body-part {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(231, 76, 60, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .body-part:hover {
+            background-color: rgba(231, 76, 60, 0.8);
+            transform: scale(1.2);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+            color: #7b1fa2;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .body-diagram {
+                width: 150px;
+                height: 225px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 4 – Health and the Body</h2>
+            <p>Learn to identify body parts and communicate about health in English.</p>
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Doctor with patient" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Identify basic body parts and health-related vocabulary</li>
+                        <li>Express common health problems using simple grammar</li>
+                        <li>Communicate basic needs during a visit to a doctor or clinic</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Body">🧠</span> 1. Vocabulary: Body Parts and Health</h2>
+                <div class="section-content">
+                    <h3>🧍 Body Parts:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="head-audio">
+                            <span role="img" aria-label="Head" style="font-size: 2rem;">👤</span>
+                            <h3>head</h3>
+                            <p>/hɛd/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="eyes-audio">
+                            <span role="img" aria-label="Eyes" style="font-size: 2rem;">👀</span>
+                            <h3>eyes</h3>
+                            <p>/aɪz/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="ears-audio">
+                            <span role="img" aria-label="Ears" style="font-size: 2rem;">👂</span>
+                            <h3>ears</h3>
+                            <p>/ɪərz/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="nose-audio">
+                            <span role="img" aria-label="Nose" style="font-size: 2rem;">👃</span>
+                            <h3>nose</h3>
+                            <p>/noʊz/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="mouth-audio">
+                            <span role="img" aria-label="Mouth" style="font-size: 2rem;">👄</span>
+                            <h3>mouth</h3>
+                            <p>/maʊθ/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="arm-audio">
+                            <span role="img" aria-label="Arm" style="font-size: 2rem;">💪</span>
+                            <h3>arm</h3>
+                            <p>/ɑːrm/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="leg-audio">
+                            <span role="img" aria-label="Leg" style="font-size: 2rem;">🦵</span>
+                            <h3>leg</h3>
+                            <p>/lɛɡ/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="hand-audio">
+                            <span role="img" aria-label="Hand" style="font-size: 2rem;">✋</span>
+                            <h3>hand</h3>
+                            <p>/hænd/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="foot-audio">
+                            <span role="img" aria-label="Foot" style="font-size: 2rem;">🦶</span>
+                            <h3>foot</h3>
+                            <p>/fʊt/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="stomach-audio">
+                            <span role="img" aria-label="Stomach" style="font-size: 2rem;">🤰</span>
+                            <h3>stomach</h3>
+                            <p>/ˈstʌmək/</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 20px;">💊 Health Vocabulary:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="sick-audio">
+                            <span role="img" aria-label="Sick" style="font-size: 2rem;">🤒</span>
+                            <h3>sick</h3>
+                            <p>/sɪk/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="pain-audio">
+                            <span role="img" aria-label="Pain" style="font-size: 2rem;">😣</span>
+                            <h3>pain</h3>
+                            <p>/peɪn/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="hurt-audio">
+                            <span role="img" aria-label="Hurt" style="font-size: 2rem;">🤕</span>
+                            <h3>hurt</h3>
+                            <p>/hɜːrt/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="tired-audio">
+                            <span role="img" aria-label="Tired" style="font-size: 2rem;">😴</span>
+                            <h3>tired</h3>
+                            <p>/ˈtaɪərd/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="medicine-audio">
+                            <span role="img" aria-label="Medicine" style="font-size: 2rem;">💊</span>
+                            <h3>medicine</h3>
+                            <p>/ˈmɛdɪsɪn/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="doctor-audio">
+                            <span role="img" aria-label="Doctor" style="font-size: 2rem;">👩⚕️</span>
+                            <h3>doctor</h3>
+                            <p>/ˈdɒktər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="clinic-audio">
+                            <span role="img" aria-label="Clinic" style="font-size: 2rem;">🏥</span>
+                            <h3>clinic</h3>
+                            <p>/ˈklɪnɪk/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Teacher says a word → students point to the body part (or flashcard)</p>
+                        <div class="body-diagram">
+                            <div class="body-part" style="top: 10px; left: 85px;" data-part="head"></div>
+                            <div class="body-part" style="top: 40px; left: 70px;" data-part="left eye"></div>
+                            <div class="body-part" style="top: 40px; left: 100px;" data-part="right eye"></div>
+                            <div class="body-part" style="top: 60px; left: 85px;" data-part="nose"></div>
+                            <div class="body-part" style="top: 80px; left: 85px;" data-part="mouth"></div>
+                            <div class="body-part" style="top: 100px; left: 50px;" data-part="left arm"></div>
+                            <div class="body-part" style="top: 100px; left: 120px;" data-part="right arm"></div>
+                            <div class="body-part" style="top: 150px; left: 85px;" data-part="stomach"></div>
+                            <div class="body-part" style="top: 200px; left: 60px;" data-part="left leg"></div>
+                            <div class="body-part" style="top: 200px; left: 110px;" data-part="right leg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">📝</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Using "have/has" for Health Problems:</h3>
+                    <div style="background-color: var(--red-bg); padding: 15px; border-radius: var(--border-radius); margin: 15px 0;">
+                        <p><strong>I have a headache.</strong></p>
+                        <p><strong>He has a stomachache.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match health issues to people or pictures:</p>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                                <span role="img" aria-label="Child" style="font-size: 2rem;">🧒</span>
+                                <p>"I have a fever"</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                                <span role="img" aria-label="Woman" style="font-size: 2rem;">👩</span>
+                                <p>"She has a sore throat"</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                                <span role="img" aria-label="Man" style="font-size: 2rem;">👨</span>
+                                <p>"He has a cough"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Reading">📄</span> Reading Paragraph</h3>
+                        <p><strong>Sara is sick today. She has a fever and a sore throat. Her mother takes her to the doctor. The doctor gives her medicine.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension Questions</h3>
+                        <ol>
+                            <li>What is Sara's problem?</li>
+                            <li>Who helps her?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Example">📝</span> Example</h3>
+                        <p><strong>I have a cold. I feel tired. I need medicine.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Write <strong>3 sentences</strong> about how you feel:</p>
+                        <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);" placeholder="Example: I have a headache. I need to rest."></textarea>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--primary-color);">🖼️ Use health-related pictures or icons to guide students</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Dialogue">💬</span> Pair Dialogue Example</h3>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>What's wrong?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>I have a headache.</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>Do you want to go to the clinic?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>Yes, please.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Use roleplay cards — students act out going to the doctor:</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user-md"></i> Doctor Card
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user-injured"></i> Patient Card
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen to health problem descriptions and select the correct image:</p>
+                        
+                        <div class="vocabulary-grid" style="margin-top: 20px;">
+                            <div class="vocab-card" data-problem="headache">
+                                <span role="img" aria-label="Headache" style="font-size: 2rem;">🤕</span>
+                                <h3>Headache</h3>
+                            </div>
+                            <div class="vocab-card" data-problem="stomachache">
+                                <span role="img" aria-label="Stomachache" style="font-size: 2rem;">🤢</span>
+                                <h3>Stomachache</h3>
+                            </div>
+                            <div class="vocab-card" data-problem="fever">
+                                <span role="img" aria-label="Fever" style="font-size: 2rem;">🤒</span>
+                                <h3>Fever</h3>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 20px;">Example Prompts:</h3>
+                        <ol>
+                            <li>"He has a pain in his head."</li>
+                            <li>"She feels hot and sick."</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🎨</span> 7. Fun Activity: Health Poster</h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Make a poster of the human body and label the parts</li>
+                        <li>Use drawings, stickers, magazine cutouts, or colored markers</li>
+                    </ul>
+                    
+                    <div class="practice-section">
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="width: 200px; height: 300px; background-color: var(--gray-light); border-radius: var(--border-radius); margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                                <span style="font-size: 2rem;">🖍️</span>
+                            </div>
+                        </div>
+                        
+                        <h3>Materials:</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Paper</span>
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Markers</span>
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Stickers</span>
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Magazines</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📌</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>Body parts and health vocabulary</li>
+                        <li>Grammar with "have/has" to describe problems</li>
+                        <li>How to talk to a doctor or visit a clinic</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Draw a body and label <strong>5 parts</strong> in English</li>
+                            <li>Write <strong>2 sentences</strong> about how you feel today</li>
+                        </ol>
+                        <p style="margin-top: 10px; font-style: italic;">Example: I have a cold. I need rest.</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Great job today!</strong></p>
+                    <p>Talking about health helps you <strong>stay safe and strong.</strong></p>
+                    <p style="margin-top: 10px;"><strong>Keep practicing your English — and take care of your body!</strong> <span role="img" aria-label="Strong">💪</span><span role="img" aria-label="Medicine">💊</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-5.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit4-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit4-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit4-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit4-reading.mp3',
+                    'writing': 'https://example.com/audio/unit4-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit4-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit4-listening.mp3',
+                    'recap': 'https://example.com/audio/unit4-recap.mp3',
+                    // Body parts audio
+                    'head-audio': 'https://example.com/audio/head.mp3',
+                    'eyes-audio': 'https://example.com/audio/eyes.mp3',
+                    'ears-audio': 'https://example.com/audio/ears.mp3',
+                    'nose-audio': 'https://example.com/audio/nose.mp3',
+                    'mouth-audio': 'https://example.com/audio/mouth.mp3',
+                    'arm-audio': 'https://example.com/audio/arm.mp3',
+                    'leg-audio': 'https://example.com/audio/leg.mp3',
+                    'hand-audio': 'https://example.com/audio/hand.mp3',
+                    'foot-audio': 'https://example.com/audio/foot.mp3',
+                    'stomach-audio': 'https://example.com/audio/stomach.mp3',
+                    // Health vocabulary audio
+                    'sick-audio': 'https://example.com/audio/sick.mp3',
+                    'pain-audio': 'https://example.com/audio/pain.mp3',
+                    'hurt-audio': 'https://example.com/audio/hurt.mp3',
+                    'tired-audio': 'https://example.com/audio/tired.mp3',
+                    'medicine-audio': 'https://example.com/audio/medicine.mp3',
+                    'doctor-audio': 'https://example.com/audio/doctor.mp3',
+                    'clinic-audio': 'https://example.com/audio/clinic.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit4-intro',
+                    'vocabulary': 'https://youtube.com/unit4-vocabulary',
+                    'grammar': 'https://youtube.com/unit4-grammar',
+                    'reading': 'https://youtube.com/unit4-reading',
+                    'writing': 'https://youtube.com/unit4-writing',
+                    'speaking': 'https://youtube.com/unit4-speaking',
+                    'listening': 'https://youtube.com/unit4-listening',
+                    'recap': 'https://youtube.com/unit4-recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Vocabulary card clicks
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const audioId = this.getAttribute('data-audio');
+                    if (audioId) {
+                        audioManager.playSection(audioId);
+                    }
+                });
+            });
+
+            // Body part clicks
+            document.querySelectorAll('.body-part').forEach(part => {
+                part.addEventListener('click', function() {
+                    const bodyPart = this.getAttribute('data-part');
+                    alert(`You clicked on the ${bodyPart}!`);
+                    
+                    // Highlight the clicked part
+                    this.style.backgroundColor = 'rgba(231, 76, 60, 1)';
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'rgba(231, 76, 60, 0.5)';
+                    }, 500);
+                });
+            });
+
+            // Listening activity - health problems
+            const listeningBtn = document.querySelector('[data-section="listening"]');
+            if (listeningBtn) {
+                listeningBtn.addEventListener('click', function() {
+                    // Random health problems for demonstration
+                    const problems = ['headache', 'stomachache', 'fever'];
+                    
+                    let currentIndex = 0;
+                    
+                    // Change highlighted problem every 3 seconds
+                    const interval = setInterval(() => {
+                        // Remove highlight from all
+                        document.querySelectorAll('.vocab-card').forEach(card => {
+                            card.style.boxShadow = 'none';
+                        });
+                        
+                        if (currentIndex < problems.length) {
+                            // Highlight current problem
+                            const currentProblem = problems[currentIndex];
+                            const problemCard = document.querySelector(`[data-problem="${currentProblem}"]`);
+                            if (problemCard) {
+                                problemCard.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                            }
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 3000);
+                });
+            }
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

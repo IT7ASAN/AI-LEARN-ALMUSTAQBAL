@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2 – Places in the Community | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Grammar Tables */
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .grammar-table caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .grammar-table th,
+        .grammar-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .grammar-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .grammar-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Reading Section */
+        .reading-passage {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .grammar-table {
+                font-size: 0.9rem;
+            }
+
+            .grammar-table th,
+            .grammar-table td {
+                padding: 8px;
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 2 – Places in the Community</h2>
+            <p>Learn common places in your community and how to describe their locations.</p>
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Community with various buildings and places" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Name common places in the community</li>
+                        <li>Use simple sentences to describe locations and directions</li>
+                        <li>Read signs and recognize places on a map</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="List">🧾</span> 1. Vocabulary: Community Places</h2>
+                <div class="section-content">
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Hospital" style="font-size: 2rem;">🏥</span>
+                            <h3>hospital</h3>
+                            <p>/ˈhɒspɪtl/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="School" style="font-size: 2rem;">🏫</span>
+                            <h3>school</h3>
+                            <p>/skuːl/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Park" style="font-size: 2rem;">🌳</span>
+                            <h3>park</h3>
+                            <p>/pɑːk/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Mosque" style="font-size: 2rem;">🕌</span>
+                            <h3>mosque</h3>
+                            <p>/mɒsk/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Church" style="font-size: 2rem;">⛪</span>
+                            <h3>church</h3>
+                            <p>/tʃɜːtʃ/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Bank" style="font-size: 2rem;">🏦</span>
+                            <h3>bank</h3>
+                            <p>/bæŋk/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Supermarket" style="font-size: 2rem;">🛒</span>
+                            <h3>supermarket</h3>
+                            <p>/ˈsuːpəmɑːkɪt/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Pharmacy" style="font-size: 2rem;">💊</span>
+                            <h3>pharmacy</h3>
+                            <p>/ˈfɑːməsi/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Bus stop" style="font-size: 2rem;">🚏</span>
+                            <h3>bus stop</h3>
+                            <p>/bʌs stɒp/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Police station" style="font-size: 2rem;">🚓</span>
+                            <h3>police station</h3>
+                            <p>/pəˈliːs steɪʃn/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match the place names with their pictures or symbols</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">📝</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 There is / There are</h3>
+                    <table class="grammar-table" aria-label="There is and there are examples">
+                        <thead>
+                            <tr>
+                                <th>Phrase</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>There is</td>
+                                <td>There is a bank on the corner.</td>
+                            </tr>
+                            <tr>
+                                <td>There are</td>
+                                <td>There are two schools in my area.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Complete sentences with <em>there is</em> or <em>there are</em>:</p>
+                        <ol>
+                            <li>______ a park near my house.</li>
+                            <li>______ three supermarkets in our town.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="reading-passage">
+                        <p>My community has many places. There is a park near my house. I go to the supermarket with my family. The hospital is across from the school.</p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Questions</h3>
+                        <ol>
+                            <li>Where is the hospital?</li>
+                            <li>Who goes to the supermarket?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <p>Write 3 sentences about your community:</p>
+                    <div class="reading-passage">
+                        <p>Example:<br>
+                        There is a mosque near my house.<br>
+                        There is a park next to the school.</p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Bonus Activity</h3>
+                        <p>Draw a simple map and label 5 places in English.</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <h3>Practice in pairs:</h3>
+                    <div class="reading-passage">
+                        <p>A: Where is the bank?<br>
+                        B: The bank is next to the pharmacy.<br>
+                        A: Is there a school near here?<br>
+                        B: Yes, there is a school near the park.</p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Use pair or group conversation to practice directions.</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen to directions and point to the correct place on a map.</p>
+                        
+                        <h3 style="margin-top: 20px;">Example Instructions:</h3>
+                        <ol>
+                            <li>Go to the park.</li>
+                            <li>Where is the supermarket?</li>
+                            <li>Go to the bus stop.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Map">🗺️</span> 7. Fun Activity: Community Map Game</h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Create a simple town map with buildings</li>
+                        <li>Use stickers, drawings, or printed pictures</li>
+                        <li>Add street names and directions</li>
+                    </ul>
+                    <p style="margin-top: 10px;">Practice giving and following directions with the map.</p>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📌</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>Names of community places</li>
+                        <li>Grammar: There is / There are</li>
+                        <li>How to describe and locate places</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 15px;">Homework:</h3>
+                    <ol>
+                        <li>Draw your community and label 5 places</li>
+                        <li>Write 2 sentences about where you go each day</li>
+                    </ol>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Great job today!</strong></p>
+                    <p>Learning about your community helps you speak English in real life.</p>
+                    <p style="margin-top: 10px;"><strong>Keep practicing and exploring new words every day!</strong> <span role="img" aria-label="Compass">🧭</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-3.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit2-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit2-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit2-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit2-reading.mp3',
+                    'writing': 'https://example.com/audio/unit2-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit2-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit2-listening.mp3',
+                    'recap': 'https://example.com/audio/unit2-recap.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit2-intro',
+                    'vocabulary': 'https://youtube.com/unit2-vocabulary',
+                    'grammar': 'https://youtube.com/unit2-grammar',
+                    'reading': 'https://youtube.com/unit2-reading',
+                    'writing': 'https://youtube.com/unit2-writing',
+                    'speaking': 'https://youtube.com/unit2-speaking',
+                    'listening': 'https://youtube.com/unit2-listening',
+                    'recap': 'https://youtube.com/unit2-recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

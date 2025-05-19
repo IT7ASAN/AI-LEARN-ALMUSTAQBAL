@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 – Alphabet and Phonics | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Tables */
+        .letter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .letter-table caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .letter-table th,
+        .letter-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .letter-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .letter-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        /* Listening Practice Section */
+        .letter-sound-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .letter-sound-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .letter-sound-btn:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Writing Practice Section */
+        .writing-practice {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .letter-table {
+                font-size: 0.9rem;
+            }
+
+            .letter-table th,
+            .letter-table td {
+                padding: 8px;
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .letter-sound-grid {
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+                gap: 6px;
+            }
+
+            .letter-sound-btn {
+                font-size: 0.9rem;
+                padding: 10px 0;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 1 – Alphabet and Phonics</h2>
+            <p>Learn the English alphabet A-Z, their sounds, and associate them with words and pictures.</p>
+            <img src="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Colorful English alphabet letters with pictures" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📘</span> Introduction to the Alphabet</h2>
+                <div class="section-content">
+                    <p>There are 26 letters in the English alphabet. Let's read them together:</p>
+                    <p><strong>A – B – C – D – E – F – G – H – I – J – K – L – M – N – O – P – Q – R – S – T – U – V – W – X – Y – Z</strong></p>
+                    <p><span role="img" aria-label="Checkmark">✅</span> Repeat after the teacher: A - B - C ...</p>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Section
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+            </section>
+
+            <!-- Letters and Sounds Table -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Sound">🔊</span> Letters and Their Sounds</h2>
+                <div class="section-content">
+                    <p>Each letter makes a specific sound. Here are the first 5 letters with examples:</p>
+                    
+                    <table class="letter-table" aria-label="English letters with their sounds and example words">
+                        <caption>Letters A to E with sounds and examples</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Letter</th>
+                                <th scope="col">Sound</th>
+                                <th scope="col">Example Word</th>
+                                <th scope="col">Picture</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">A</th>
+                                <td>/æ/</td>
+                                <td>Apple</td>
+                                <td><span role="img" aria-label="Apple">🍎</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">B</th>
+                                <td>/b/</td>
+                                <td>Ball</td>
+                                <td><span role="img" aria-label="Ball">⚽</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">C</th>
+                                <td>/k/</td>
+                                <td>Cat</td>
+                                <td><span role="img" aria-label="Cat">🐱</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">D</th>
+                                <td>/d/</td>
+                                <td>Dog</td>
+                                <td><span role="img" aria-label="Dog">🐶</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">E</th>
+                                <td>/e/</td>
+                                <td>Egg</td>
+                                <td><span role="img" aria-label="Egg">🥚</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="activity-card">
+                        <h3 class="section-title"><span role="img" aria-label="Headphones">🎧</span> Listening Practice</h3>
+                        <p>Click on each letter to hear its sound:</p>
+                        <div class="letter-sound-grid">
+                            <button class="letter-sound-btn" data-sound="A" aria-label="Listen to letter A">A</button>
+                            <button class="letter-sound-btn" data-sound="B" aria-label="Listen to letter B">B</button>
+                            <button class="letter-sound-btn" data-sound="C" aria-label="Listen to letter C">C</button>
+                            <button class="letter-sound-btn" data-sound="D" aria-label="Listen to letter D">D</button>
+                            <button class="letter-sound-btn" data-sound="E" aria-label="Listen to letter E">E</button>
+                            <button class="letter-sound-btn" data-sound="F" aria-label="Listen to letter F">F</button>
+                            <button class="letter-sound-btn" data-sound="G" aria-label="Listen to letter G">G</button>
+                            <button class="letter-sound-btn" data-sound="H" aria-label="Listen to letter H">H</button>
+                            <button class="letter-sound-btn" data-sound="I" aria-label="Listen to letter I">I</button>
+                            <button class="letter-sound-btn" data-sound="J" aria-label="Listen to letter J">J</button>
+                            <button class="letter-sound-btn" data-sound="K" aria-label="Listen to letter K">K</button>
+                            <button class="letter-sound-btn" data-sound="L" aria-label="Listen to letter L">L</button>
+                            <button class="letter-sound-btn" data-sound="M" aria-label="Listen to letter M">M</button>
+                            <button class="letter-sound-btn" data-sound="N" aria-label="Listen to letter N">N</button>
+                            <button class="letter-sound-btn" data-sound="O" aria-label="Listen to letter O">O</button>
+                            <button class="letter-sound-btn" data-sound="P" aria-label="Listen to letter P">P</button>
+                            <button class="letter-sound-btn" data-sound="Q" aria-label="Listen to letter Q">Q</button>
+                            <button class="letter-sound-btn" data-sound="R" aria-label="Listen to letter R">R</button>
+                            <button class="letter-sound-btn" data-sound="S" aria-label="Listen to letter S">S</button>
+                            <button class="letter-sound-btn" data-sound="T" aria-label="Listen to letter T">T</button>
+                            <button class="letter-sound-btn" data-sound="U" aria-label="Listen to letter U">U</button>
+                            <button class="letter-sound-btn" data-sound="V" aria-label="Listen to letter V">V</button>
+                            <button class="letter-sound-btn" data-sound="W" aria-label="Listen to letter W">W</button>
+                            <button class="letter-sound-btn" data-sound="X" aria-label="Listen to letter X">X</button>
+                            <button class="letter-sound-btn" data-sound="Y" aria-label="Listen to letter Y">Y</button>
+                            <button class="letter-sound-btn" data-sound="Z" aria-label="Listen to letter Z">Z</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="letters">
+                        <i class="fas fa-volume-up"></i> Read Section
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="letters">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Practice -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✏️</span> Writing Practice</h2>
+                <div class="section-content">
+                    <p>Let's practice writing the first 3 letters:</p>
+                    <ol>
+                        <li>Look at the letter shape</li>
+                        <li>Watch how to write it</li>
+                        <li>Trace the letter with your finger</li>
+                        <li>Try writing it yourself</li>
+                    </ol>
+                    
+                    <div class="writing-practice">
+                        <p>Watch the video tutorial to learn how to write each letter correctly:</p>
+                        <a href="https://www.youtube.com/watch?v=3ycW5JaHv8I" class="section-btn section-btn-video" target="_blank">
+                            <i class="fab fa-youtube"></i> Watch Writing Tutorial
+                        </a>
+                    </div>
+                    
+                    <div class="section-actions">
+                        <button class="section-btn section-btn-audio">
+                            <i class="fas fa-redo"></i> Try Again
+                        </button>
+                        <button class="section-btn section-btn-video">
+                            <i class="fas fa-check"></i> I Did It!
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Read Section
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+            </section>
+
+            <!-- Summary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📋</span> Lesson Summary</h2>
+                <div class="section-content">
+                    <p>Today we learned:</p>
+                    <ul>
+                        <li>The English alphabet has 26 letters from A to Z</li>
+                        <li>Each letter makes a specific sound (phonics)</li>
+                        <li>We practiced writing letters A, B, and C</li>
+                        <li>We matched letters with example words and pictures</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="summary">
+                        <i class="fas fa-volume-up"></i> Read Summary
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="summary">
+                        <i class="fas fa-video"></i> Review Video
+                    </button>
+                </div>
+            </section>
+
+            <!-- Homework Section -->
+            <section class="section-card homework-section">
+                <h2 class="section-title homework-title"><span role="img" aria-label="Homework">🏠</span> Homework</h2>
+                <div class="section-content">
+                    <p>Practice what you learned today:</p>
+                    <ol>
+                        <li>Listen to the alphabet song 3 times</li>
+                        <li>Write letters A, B, and C 5 times each</li>
+                        <li>Find 3 objects at home that start with A, B, or C</li>
+                        <li>Teach someone in your family how to pronounce these letters</li>
+                    </ol>
+                    <p style="margin-top: 15px;"><strong>Remember:</strong> Practice daily for best results!</p>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="homework">
+                        <i class="fas fa-volume-up"></i> Read Homework
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="homework">
+                        <i class="fas fa-video"></i> Homework Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-2.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Audio Management System
+            const audioManager = {
+                // Audio files for each letter sound
+                letterSounds: {
+                    'A': 'https://www.soundjay.com/human/sounds/a-01.mp3',
+                    'B': 'https://www.soundjay.com/human/sounds/b-01.mp3',
+                    'C': 'https://www.soundjay.com/human/sounds/c-01.mp3',
+                    'D': 'https://www.soundjay.com/human/sounds/d-01.mp3',
+                    'E': 'https://www.soundjay.com/human/sounds/e-01.mp3',
+                    'F': 'https://www.soundjay.com/human/sounds/f-01.mp3',
+                    'G': 'https://www.soundjay.com/human/sounds/g-01.mp3',
+                    'H': 'https://www.soundjay.com/human/sounds/h-01.mp3',
+                    'I': 'https://www.soundjay.com/human/sounds/i-01.mp3',
+                    'J': 'https://www.soundjay.com/human/sounds/j-01.mp3',
+                    'K': 'https://www.soundjay.com/human/sounds/k-01.mp3',
+                    'L': 'https://www.soundjay.com/human/sounds/l-01.mp3',
+                    'M': 'https://www.soundjay.com/human/sounds/m-01.mp3',
+                    'N': 'https://www.soundjay.com/human/sounds/n-01.mp3',
+                    'O': 'https://www.soundjay.com/human/sounds/o-01.mp3',
+                    'P': 'https://www.soundjay.com/human/sounds/p-01.mp3',
+                    'Q': 'https://www.soundjay.com/human/sounds/q-01.mp3',
+                    'R': 'https://www.soundjay.com/human/sounds/r-01.mp3',
+                    'S': 'https://www.soundjay.com/human/sounds/s-01.mp3',
+                    'T': 'https://www.soundjay.com/human/sounds/t-01.mp3',
+                    'U': 'https://www.soundjay.com/human/sounds/u-01.mp3',
+                    'V': 'https://www.soundjay.com/human/sounds/v-01.mp3',
+                    'W': 'https://www.soundjay.com/human/sounds/w-01.mp3',
+                    'X': 'https://www.soundjay.com/human/sounds/x-01.mp3',
+                    'Y': 'https://www.soundjay.com/human/sounds/y-01.mp3',
+                    'Z': 'https://www.soundjay.com/human/sounds/z-01.mp3'
+                },
+                
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/intro.mp3',
+                    'letters': 'https://example.com/audio/letters.mp3',
+                    'writing': 'https://example.com/audio/writing.mp3',
+                    'summary': 'https://example.com/audio/summary.mp3',
+                    'homework': 'https://example.com/audio/homework.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/intro',
+                    'letters': 'https://youtube.com/letters',
+                    'writing': 'https://youtube.com/writing',
+                    'summary': 'https://youtube.com/summary',
+                    'homework': 'https://youtube.com/homework'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play sound function
+                playSound: function(soundKey) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.letterSounds[soundKey] || this.sectionAudio[soundKey]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    if (this.sectionAudio[sectionId]) {
+                        this.playSound(sectionId);
+                    } else {
+                        console.warn("No audio found for section:", sectionId);
+                    }
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize letter sound buttons
+            document.querySelectorAll('.letter-sound-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const letter = this.getAttribute('data-sound');
+                    audioManager.playSound(letter);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // Performance optimization - preload important audio
+            function preloadAudio(url) {
+                const audio = new Audio();
+                audio.src = url;
+                audio.preload = 'auto';
+            }
+
+            // Preload first few letters for better UX
+            preloadAudio(audioManager.letterSounds['A']);
+            preloadAudio(audioManager.letterSounds['B']);
+            preloadAudio(audioManager.letterSounds['C']);
+        });
+    </script>
+</body>
+
+</html>

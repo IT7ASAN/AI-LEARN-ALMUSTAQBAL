@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 – Time and Daily Schedules | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Time Display */
+        .time-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Routine Table */
+        .routine-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .routine-table caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .routine-table th,
+        .routine-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .routine-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .routine-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Clock Face */
+        .clock-face {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            border: 5px solid var(--primary-color);
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .clock-hands {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+        }
+
+        .hour-hand {
+            width: 4px;
+            height: 40px;
+            background-color: var(--dark-color);
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .minute-hand {
+            width: 3px;
+            height: 60px;
+            background-color: var(--primary-color);
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .routine-table {
+                font-size: 0.9rem;
+            }
+
+            .routine-table th,
+            .routine-table td {
+                padding: 8px;
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .clock-face {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+
+            .time-display {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 3 – Time and Daily Schedules</h2>
+            <p>Learn to tell time and describe your daily routine in English.</p>
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                alt="Clock and daily schedule" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Tell time using "o'clock" and "half past"</li>
+                        <li>Use daily routine vocabulary in context</li>
+                        <li>Create and describe your own daily schedule</li>
+                    </ul>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clock">⏰</span> 1. Vocabulary: Time and Routines
+                </h2>
+                <div class="section-content">
+                    <h3>Time Expressions:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card">
+                            <span role="img" aria-label="O'clock" style="font-size: 2rem;">🕐</span>
+                            <h3>o'clock</h3>
+                            <p>/əˈklɒk/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Half past" style="font-size: 2rem;">🕜</span>
+                            <h3>half past</h3>
+                            <p>/hɑːf pɑːst/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Morning" style="font-size: 2rem;">🌅</span>
+                            <h3>morning</h3>
+                            <p>/ˈmɔːnɪŋ/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Afternoon" style="font-size: 2rem;">🌇</span>
+                            <h3>afternoon</h3>
+                            <p>/ˌɑːftəˈnuːn/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Evening" style="font-size: 2rem;">🌆</span>
+                            <h3>evening</h3>
+                            <p>/ˈiːvnɪŋ/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Night" style="font-size: 2rem;">🌃</span>
+                            <h3>night</h3>
+                            <p>/naɪt/</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 20px;">Daily Routine Actions:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Wake up" style="font-size: 2rem;">⏰</span>
+                            <h3>wake up</h3>
+                            <p>/weɪk ʌp/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Eat breakfast" style="font-size: 2rem;">🍳</span>
+                            <h3>eat breakfast</h3>
+                            <p>/iːt ˈbrekfəst/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Go to school" style="font-size: 2rem;">🏫</span>
+                            <h3>go to school</h3>
+                            <p>/ɡəʊ tə skuːl/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Study" style="font-size: 2rem;">📚</span>
+                            <h3>study</h3>
+                            <p>/ˈstʌdi/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Eat lunch" style="font-size: 2rem;">🍽️</span>
+                            <h3>eat lunch</h3>
+                            <p>/iːt lʌntʃ/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Go home" style="font-size: 2rem;">🏠</span>
+                            <h3>go home</h3>
+                            <p>/ɡəʊ həʊm/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Rest" style="font-size: 2rem;">🛋️</span>
+                            <h3>rest</h3>
+                            <p>/rest/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <span role="img" aria-label="Sleep" style="font-size: 2rem;">🛏️</span>
+                            <h3>sleep</h3>
+                            <p>/sliːp/</p>
+                        </div>
+                    </div>
+
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match the time with the correct routine (e.g., 7:00 → wake up)</p>
+                        <div class="vocabulary-grid">
+                            <div class="vocab-card" data-time="7:00">
+                                <div class="time-display">7:00</div>
+                                <p>?</p>
+                            </div>
+                            <div class="vocab-card" data-time="8:00">
+                                <div class="time-display">8:00</div>
+                                <p>?</p>
+                            </div>
+                            <div class="vocab-card" data-time="1:00">
+                                <div class="time-display">1:00</div>
+                                <p>?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">📝</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Present Simple for Routines</h3>
+                    <div class="time-display" style="font-size: 1.5rem; text-align: left; margin: 15px 0;">
+                        I wake up at 7 o'clock.<br>
+                        She eats lunch at 1:30.
+                    </div>
+
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Fill in the blanks:</p>
+                        <ol>
+                            <li>He _____ at 8:00. (go to school)</li>
+                            <li>We _____ at 7:30. (eat breakfast)</li>
+                            <li>She _____ at 9:00. (go to bed)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Reading">📄</span> Reading Paragraph
+                        </h3>
+                        <p>My name is Omar. I wake up at 6:00 in the morning. I go to school at 8:00. I eat lunch at
+                            1:00. I go home at 3:00 and sleep at 9:00.</p>
+                    </div>
+
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension
+                            Questions</h3>
+                        <ol>
+                            <li>What time does Omar wake up?</li>
+                            <li>When does he go to sleep?</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Example">📝</span> Example</h3>
+                        <p>I wake up at 7:00. I go to school at 8:30. I eat lunch at 1:00.</p>
+                    </div>
+
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Write your own routine using a daily planner format:</p>
+                        <table class="routine-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6:30</td>
+                                    <td><input type="text" placeholder="Enter activity"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8:00</td>
+                                    <td><input type="text" placeholder="Enter activity"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1:00</td>
+                                    <td><input type="text" placeholder="Enter activity"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Dialogue">💬</span> Pair Practice
+                            Example</h3>
+                        <p>A: What time do you wake up?<br>
+                            B: I wake up at 6:30.<br>
+                            A: What do you do at 1:00?<br>
+                            B: I eat lunch.</p>
+                    </div>
+
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Use flashcards showing clocks + daily actions to practice with a partner.</p>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen to daily routine descriptions and point to the correct time on a clock.</p>
+
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div class="clock-face">
+                                <div class="clock-hands hour-hand"
+                                    style="transform: translate(-50%, -100%) rotate(0deg);"></div>
+                                <div class="clock-hands minute-hand"
+                                    style="transform: translate(-50%, -100%) rotate(0deg);"></div>
+                            </div>
+                        </div>
+
+                        <h3 style="margin-top: 20px;">Example Prompts:</h3>
+                        <ol>
+                            <li>"She goes to bed at 9:00."</li>
+                            <li>"He eats breakfast at 7:30."</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🎮</span> 7. Fun Activity: My Daily Planner
+                </h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Create your daily schedule with time, action, and picture</li>
+                        <li>Use drawing tools, cut-out images, or digital icons</li>
+                    </ul>
+
+                    <div class="practice-section">
+                        <table class="routine-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Action</th>
+                                    <th>Picture</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>7:00</td>
+                                    <td>Wake up</td>
+                                    <td>⏰</td>
+                                </tr>
+                                <tr>
+                                    <td>1:00</td>
+                                    <td>Eat lunch</td>
+                                    <td>🍽️</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" placeholder="Time"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                                    </td>
+                                    <td><input type="text" placeholder="Action"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                                    </td>
+                                    <td><input type="text" placeholder="Emoji"
+                                            style="width: 100%; padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📌</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>How to tell time with "o'clock" and "half past"</li>
+                        <li>Common daily routine vocabulary</li>
+                        <li>How to describe your day in English</li>
+                    </ul>
+
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Draw your daily routine with 5 times + actions</li>
+                            <li>Practice saying each sentence aloud (e.g., "I eat lunch at 1:00.")</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img"
+                        aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Well
+                            done!</strong></p>
+                    <p>Talking about your daily routine helps you use English every day.</p>
+                    <p style="margin-top: 10px;"><strong>Keep practicing your time words and daily actions!</strong>
+                        <span role="img" aria-label="Clock">⏰</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-4.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit3-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit3-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit3-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit3-reading.mp3',
+                    'writing': 'https://example.com/audio/unit3-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit3-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit3-listening.mp3',
+                    'recap': 'https://example.com/audio/unit3-recap.mp3'
+                },
+
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit3-intro',
+                    'vocabulary': 'https://youtube.com/unit3-vocabulary',
+                    'grammar': 'https://youtube.com/unit3-grammar',
+                    'reading': 'https://youtube.com/unit3-reading',
+                    'writing': 'https://youtube.com/unit3-writing',
+                    'speaking': 'https://youtube.com/unit3-speaking',
+                    'listening': 'https://youtube.com/unit3-listening',
+                    'recap': 'https://youtube.com/unit3-recap'
+                },
+
+                // Current audio instance
+                currentAudio: null,
+
+                // Play section audio
+                playSection: function (sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+
+                // Open video
+                openVideo: function (videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Clock functionality for listening activity
+            const hourHand = document.querySelector('.hour-hand');
+            const minuteHand = document.querySelector('.minute-hand');
+
+            function setClockTime(hours, minutes) {
+                const hourDegrees = (hours % 12) * 30 + (minutes / 60) * 30;
+                const minuteDegrees = minutes * 6;
+
+                hourHand.style.transform = `translate(-50%, -100%) rotate(${hourDegrees}deg)`;
+                minuteHand.style.transform = `translate(-50%, -100%) rotate(${minuteDegrees}deg)`;
+            }
+
+            // Set initial time
+            setClockTime(3, 0);
+
+            // Listening activity - change clock time when audio plays
+            const listeningBtn = document.querySelector('[data-section="listening"]');
+            if (listeningBtn) {
+                listeningBtn.addEventListener('click', function () {
+                    // Random times for demonstration
+                    const times = [
+                        { hours: 7, minutes: 0 },   // wake up
+                        { hours: 8, minutes: 30 },  // go to school
+                        { hours: 1, minutes: 0 },   // eat lunch
+                        { hours: 9, minutes: 0 }     // go to bed
+                    ];
+
+                    let currentIndex = 0;
+
+                    // Change clock every 3 seconds
+                    const interval = setInterval(() => {
+                        if (currentIndex < times.length) {
+                            setClockTime(times[currentIndex].hours, times[currentIndex].minutes);
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 3000);
+                });
+            }
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

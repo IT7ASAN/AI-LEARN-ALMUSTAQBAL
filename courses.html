@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learn Almustaqbal | Courses</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --high-contrast-text: #000000;
+            --high-contrast-bg: #ffffff;
+            --font-main: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            transition: var(--transition);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 120px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo:hover img {
+            transform: rotate(10deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: calc(100% - 30px);
+        }
+
+        nav a i {
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* Page Content Styles */
+        .page-content {
+            padding: 150px 0 80px;
+            min-height: calc(100vh - 230px);
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            opacity: 0.8;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* Courses Page Specific Styles */
+        .courses-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Improved Search Box Styles */
+        .courses-search {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+            box-shadow: var(--box-shadow);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .courses-search:focus-within {
+            box-shadow: 0 0 0 3px rgba(244, 179, 80, 0.3);
+        }
+
+        .courses-search input {
+            width: 100%;
+            padding: 15px 25px 15px 50px;
+            border: 2px solid var(--gray-medium);
+            border-radius: 50px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .courses-search input:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        .courses-search button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            background-color: var(--yellow-bg);
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+        }
+
+        .no-results h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .no-results p {
+            color: var(--dark-color);
+            opacity: 0.8;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .course-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .course-card-header {
+            position: relative;
+        }
+
+        .course-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-image {
+            transform: scale(1.05);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .course-level {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .course-card-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-title {
+            color: var(--primary-light);
+        }
+
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .instructor-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .instructor-name {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            opacity: 0.8;
+        }
+
+        .course-description {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            opacity: 0.8;
+            flex: 1;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .course-meta i {
+            color: var(--secondary-color);
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-secondary);
+            color: var(--dark-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(244, 179, 80, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        .btn:hover::after {
+            transform: translateX(0);
+        }
+
+        .btn:hover {
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(44, 90, 125, 0.3);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            color: white;
+            box-shadow: 0 6px 16px rgba(44, 90, 125, 0.4);
+        }
+
+        .course-actions .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            max-width: 800px;
+            width: 90%;
+            box-shadow: var(--box-shadow-lg);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .course-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .course-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .course-info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-info-item i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .course-description-long {
+            line-height: 1.8;
+        }
+
+        .course-image-large {
+            width: 100%;
+            border-radius: var(--border-radius);
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0 20px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient-secondary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-right: 5px;
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gradient-secondary);
+            color: var(--dark-color);
+            transform: translateY(-5px);
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 9999;
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification.active {
+            transform: translateX(0);
+        }
+
+        .notification i {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .course-details {
+                grid-template-columns: 1fr;
+            }
+            .logo img {
+                height: 80px;
+            }
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border-top: 2px solid var(--secondary-color);
+            }
+
+            nav.active {
+                display: block;
+                animation: slideDown 0.3s ease;
+            }
+
+            .logo img {
+                height: 80px;
+            }
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                justify-content: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            .logo img {
+                height: 80px;
+            }
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-actions {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-links h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+            }
+
+            .footer-contact p {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="alm.png" alt="AI Learn Logo">
+                <div class="logo-text">
+                    <h1>AI LEARN ALMUSTAQBAL</h1>
+                    <span>Education for All</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="courses.html" class="nav-link active" data-page="courses"><i class="fas fa-book"></i> Courses</a></li>
+                    <!-- <li><a href="tools.html" class="nav-link" data-page="tools"><i class="fas fa-tools"></i> Tools</a></li>
+                    <li><a href="downloads.html" class="nav-link" data-page="downloads"><i class="fas fa-download"></i> Downloads</a></li>
+                    <li><a href="settings.html" class="nav-link" data-page="settings"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="profile.html" class="nav-link" data-page="profile"><i class="fas fa-user"></i> Account</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Courses Page Content -->
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title">Our Courses</h1>
+            <p class="page-subtitle">Discover our collection of accessible courses designed for all learning needs</p>
+
+            <div class="courses-header">
+                <div class="courses-search">
+                    <input type="text" placeholder="Search courses by title, instructor or description..." id="courseSearch">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Course cards will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Course Details Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalCourseTitle">Course Title</h2>
+            </div>
+            <div class="modal-body" id="modalCourseBody">
+                <!-- Course details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="alm.png" alt="AI Learn Logo">
+                        <h3>AI LEARN ALMUSTAQBAL</h3>
+                    </div>
+                    <p>An educational platform for adults with disabilities in hot climates. Using AI for inclusive and accessible learning.</p>
+                    <div class="social-links">
+                        <a href="https://n9.cl/tze5v" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://linksshortcut.com/ItQfZ" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linksshortcut.com/SUoOB" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://linksshortcut.com/NVDXh" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Babylon Province, Hilla-Najaf Road, Opposite University of Babylon</p>
+                    <p><i class="fas fa-phone-alt"></i> Inquiries: 6163</p>
+                    <p><i class="fas fa-envelope"></i> info@ailearn.edu</p>
+                    <p><i class="fas fa-clock"></i> Sat - Thu: 8:00 AM - 4:00 PM</p>
+    
+               
+                </div>
+            </div>
+    
+            <div class="copyright">
+                &copy; 2023 AI Learn Almustaqbal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Operation completed successfully</span>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+
+            mobileMenuBtn.addEventListener('click', function () {
+                mainNav.classList.toggle('active');
+                this.innerHTML = mainNav.classList.contains('active') ?
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Navigation functionality
+            const navLinks = document.querySelectorAll('.nav-link, .footer-links a[data-page]');
+
+            function showPage(pageId) {
+                // تحديد الصفحة المطلوبة بناءً على data-page
+                let pageUrl;
+                switch(pageId) {
+                    case 'home':
+                        pageUrl = 'index.html';
+                        break;
+                    case 'courses':
+                        pageUrl = 'courses.html';
+                        break;
+                    case 'tools':
+                        pageUrl = 'tools.html';
+                        break;
+                    case 'downloads':
+                        pageUrl = 'downloads.html';
+                        break;
+                    case 'settings':
+                        pageUrl = 'settings.html';
+                        break;
+                    case 'profile':
+                        pageUrl = 'profile.html';
+                        break;
+                    default:
+                        pageUrl = 'index.html';
+                }
+                
+                // الانتقال إلى الصفحة المطلوبة
+                window.location.href = pageUrl;
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    if (pageId) showPage(pageId);
+                });
+            });
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+
+            backToTop.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Notification system
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notificationText');
+
+            function showNotification(message) {
+                notificationText.textContent = message;
+                notification.classList.add('active');
+
+                setTimeout(() => {
+                    notification.classList.remove('active');
+                }, 3000);
+            }
+
+            // Course data (only 3 courses as requested)
+            const courses = [
+                {
+                    id: 1,
+                    title: "Digital Literacy Basics",
+                    description: "Learn the fundamentals of using computers and the internet in an accessible way.",
+                    longDescription: "This comprehensive course covers all the basics of digital literacy, designed specifically for learners with different abilities. You'll learn how to use computers, navigate the internet safely, and utilize essential software applications. The course includes interactive exercises and real-world examples to help you gain confidence in the digital world.",
+                    image: "image.png",
+                    instructor: "Dr. Sarah Ahmed",
+                    duration: "2 Hours",
+                    level: "Beginner",
+                    category: "visual",
+                    rating: 4.8,
+                    students: 125,
+                    lessons: 8,
+                    progress: 0,
+                    syllabus: [
+                        "Introduction to Computers",
+                        "Using the Keyboard and Mouse",
+                        "Basic Software Applications",
+                        "Internet Basics",
+                        "Online Safety and Security",
+                        "Email Communication",
+                        "Using Accessibility Features",
+                        "Final Project"
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "Communication Skills",
+                    description: "Develop effective communication techniques for personal and professional settings.",
+                    longDescription: "Master the art of effective communication with this comprehensive course. Designed for all learning styles, this program covers verbal and non-verbal communication, active listening, and professional communication techniques. You'll practice through role-playing exercises and receive personalized feedback to improve your skills.",
+                    image: "image3.png",
+                    instructor: "Prof. Ali Hassan",
+                    duration: "3 Hours",
+                    level: "Intermediate",
+                    category: "hearing",
+                    rating: 4.5,
+                    students: 89,
+                    lessons: 12,
+                    progress: 0,
+                    syllabus: [
+                        "Understanding Communication",
+                        "Verbal Communication Skills",
+                        "Non-Verbal Cues",
+                        "Active Listening Techniques",
+                        "Professional Communication",
+                        "Overcoming Communication Barriers",
+                        "Cultural Sensitivity",
+                        "Conflict Resolution",
+                        "Public Speaking Basics",
+                        "Written Communication",
+                        "Digital Communication",
+                        "Final Assessment"
+                    ]
+                },
+                {
+                    id: 3,
+                    title: "Job Readiness Training",
+                    description: "Prepare for employment with resume writing, interview skills, and workplace etiquette.",
+                    longDescription: "This intensive job readiness program prepares you for the workforce with practical skills and knowledge. You'll learn how to create a professional resume, ace job interviews, understand workplace expectations, and develop essential soft skills. The course includes mock interviews and personalized career guidance to help you succeed in your job search.",
+                    image: "image2.png",
+                    instructor: "Coach Fatima Khalid",
+                    duration: "4 Hours",
+                    level: "Advanced",
+                    category: "mobility",
+                    rating: 4.9,
+                    students: 67,
+                    lessons: 10,
+                    progress: 0,
+                    syllabus: [
+                        "Career Assessment",
+                        "Resume Writing",
+                        "Cover Letter Preparation",
+                        "Job Search Strategies",
+                        "Interview Techniques",
+                        "Workplace Etiquette",
+                        "Time Management",
+                        "Teamwork Skills",
+                        "Problem Solving at Work",
+                        "Mock Interview Session"
+                    ]
+                }
+            ];
+
+            // DOM elements
+            const coursesGrid = document.getElementById('coursesGrid');
+            const courseSearch = document.getElementById('courseSearch');
+            
+            // Modal elements
+            const courseModal = document.getElementById('courseModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalCourseTitle = document.getElementById('modalCourseTitle');
+            const modalCourseBody = document.getElementById('modalCourseBody');
+
+            // Render courses
+            function renderCourses(filteredCourses = courses) {
+                coursesGrid.innerHTML = '';
+                
+                if (filteredCourses.length === 0) {
+                    coursesGrid.innerHTML = `
+                        <div class="no-results">
+                            <h3>No courses found matching your search</h3>
+                            <p>Try searching for something else or check back later</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                filteredCourses.forEach(course => {
+                    const courseCard = document.createElement('div');
+                    courseCard.className = 'course-card';
+                    courseCard.setAttribute('data-category', course.category);
+                    
+                    const badgeIcon = {
+                        'visual': 'fa-eye',
+                        'hearing': 'fa-ear-deaf',
+                        'mobility': 'fa-wheelchair',
+                        'cognitive': 'fa-brain'
+                    }[course.category];
+                    
+                    const levelClass = {
+                        'Beginner': 'beginner',
+                        'Intermediate': 'intermediate',
+                        'Advanced': 'advanced'
+                    }[course.level];
+                    
+                    courseCard.innerHTML = `
+                        <div class="course-card-header">
+                            <img src="${course.image}" alt="${course.title}" class="course-image">
+                            <span class="course-badge"><i class="fas ${badgeIcon}"></i> ${course.category.charAt(0).toUpperCase() + course.category.slice(1)}</span>
+                            <span class="course-level ${levelClass}">${course.level}</span>
+                        </div>
+                        <div class="course-card-body">
+                            <h3 class="course-title">${course.title}</h3>
+                            <div class="course-instructor">
+                                <img src="https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'men' : 'women'}/${Math.floor(Math.random() * 50)}.jpg" alt="Instructor" class="instructor-avatar">
+                                <span class="instructor-name">${course.instructor}</span>
+                            </div>
+                            <p class="course-description">${course.description}</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> ${course.duration}</span>
+                                <span><i class="fas fa-users"></i> ${course.students}</span>
+                                <span><i class="fas fa-star"></i> ${course.rating}</span>
+                            </div>
+                            <div class="course-actions">
+                                <a href="course.html?id=${course.id}" class="btn btn-primary" data-course-id="${course.id}"><i class="fas fa-play"></i> Start</a>
+                                <a href="#" class="btn btn-outline view-details" data-course-id="${course.id}"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    `;
+                    
+                    coursesGrid.appendChild(courseCard);
+                });
+                
+                // Add event listeners to details buttons
+                document.querySelectorAll('.view-details').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const courseId = this.getAttribute('data-course-id');
+                        const course = courses.find(c => c.id == courseId);
+                        showCourseDetails(course);
+                    });
+                });
+            }
+
+            // Show course details in modal
+            function showCourseDetails(course) {
+                modalCourseTitle.textContent = course.title;
+                
+                // Create syllabus list
+                let syllabusList = '<ul>';
+                course.syllabus.forEach(item => {
+                    syllabusList += `<li>${item}</li>`;
+                });
+                syllabusList += '</ul>';
+                
+                modalCourseBody.innerHTML = `
+                    <div class="course-details">
+                        <div class="course-info">
+                            <img src="${course.image}" alt="${course.title}" class="course-image-large">
+                        </div>
+                        <div class="course-info">
+                            <div class="course-info-item">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <span><strong>Instructor:</strong> ${course.instructor}</span>
+                            </div>
+                            <div class="course-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Duration:</strong> ${course.duration}</span>
+                            </div>
+                            <div class="course-info-item">
+                                <i class="fas fa-signal"></i>
+                                <span><strong>Level:</strong> ${course.level}</span>
+                            </div>
+                            <div class="course-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Students:</strong> ${course.students}</span>
+                            </div>
+                            <div class="course-info-item">
+                                <i class="fas fa-star"></i>
+                                <span><strong>Rating:</strong> ${course.rating}/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-description-long">
+                        <h3>Course Description</h3>
+                        <p>${course.longDescription}</p>
+                    </div>
+                    <div class="course-syllabus">
+                        <h3>Course Syllabus</h3>
+                        ${syllabusList}
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="course.html?id=${course.id}" class="btn btn-primary" style="padding: 12px 30px;">
+                            <i class="fas fa-play"></i> Start Course
+                        </a>
+                    </div>
+                `;
+                
+                courseModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                courseModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === courseModal) {
+                    courseModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Search courses
+            function searchCourses(query) {
+                query = query.toLowerCase().trim();
+                
+                if (query === '') {
+                    renderCourses();
+                    return;
+                }
+                
+                const filtered = courses.filter(course => 
+                    course.title.toLowerCase().includes(query) || 
+                    course.description.toLowerCase().includes(query) ||
+                    course.instructor.toLowerCase().includes(query) ||
+                    course.category.toLowerCase().includes(query) ||
+                    course.level.toLowerCase().includes(query)
+                );
+                
+                renderCourses(filtered);
+            }
+
+            // Event listeners
+            courseSearch.addEventListener('input', function() {
+                searchCourses(this.value);
+            });
+
+            // Search button click
+            document.querySelector('.courses-search button').addEventListener('click', function() {
+                searchCourses(courseSearch.value);
+            });
+
+            // Search on Enter key
+            courseSearch.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchCourses(this.value);
+                }
+            });
+
+            // Initialize
+            renderCourses();
+
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('Browse our collection of accessible courses');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

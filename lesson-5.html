@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5 – Shopping and Money | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --red-bg: #ffebee;
+            --blue-bg: #e3f2fd;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        .price-tag {
+            background-color: var(--secondary-light);
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Shopping Items */
+        .shopping-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .shopping-item {
+            background-color: var(--blue-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            width: 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .shopping-item .price {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+            color: #7b1fa2;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Shopping List */
+        .shopping-list {
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 300px;
+            margin: 20px 0;
+        }
+
+        .shopping-list-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--gray-medium);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Market Game */
+        .market-game {
+            background-color: var(--blue-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .play-money {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .money-item {
+            background-color: var(--secondary-light);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            box-shadow: var(--box-shadow);
+            min-width: 60px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .shopping-item {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+
+            .shopping-item {
+                width: 80px;
+                padding: 10px;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 5 – Shopping and Money</h2>
+            <p>Learn to talk about shopping, prices, and money in English.</p>
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Person shopping in supermarket" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Use basic shopping and money vocabulary</li>
+                        <li>Ask and answer questions about prices and items</li>
+                        <li>Read price tags and create shopping lists</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Shopping Cart">🛒</span> 1. Vocabulary: Shopping Items and Money</h2>
+                <div class="section-content">
+                    <h3>🛍️ Common Items:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="bread-audio">
+                            <span role="img" aria-label="Bread" style="font-size: 2rem;">🍞</span>
+                            <h3>bread</h3>
+                            <p>/brɛd/</p>
+                            <span class="price-tag">$2</span>
+                        </div>
+                        <div class="vocab-card" data-audio="milk-audio">
+                            <span role="img" aria-label="Milk" style="font-size: 2rem;">🥛</span>
+                            <h3>milk</h3>
+                            <p>/mɪlk/</p>
+                            <span class="price-tag">$3</span>
+                        </div>
+                        <div class="vocab-card" data-audio="rice-audio">
+                            <span role="img" aria-label="Rice" style="font-size: 2rem;">🍚</span>
+                            <h3>rice</h3>
+                            <p>/raɪs/</p>
+                            <span class="price-tag">$5</span>
+                        </div>
+                        <div class="vocab-card" data-audio="shirt-audio">
+                            <span role="img" aria-label="Shirt" style="font-size: 2rem;">👕</span>
+                            <h3>shirt</h3>
+                            <p>/ʃɜːrt/</p>
+                            <span class="price-tag">$10</span>
+                        </div>
+                        <div class="vocab-card" data-audio="shoes-audio">
+                            <span role="img" aria-label="Shoes" style="font-size: 2rem;">👟</span>
+                            <h3>shoes</h3>
+                            <p>/ʃuːz/</p>
+                            <span class="price-tag">$25</span>
+                        </div>
+                        <div class="vocab-card" data-audio="apple-audio">
+                            <span role="img" aria-label="Apple" style="font-size: 2rem;">🍎</span>
+                            <h3>apple</h3>
+                            <p>/ˈæpəl/</p>
+                            <span class="price-tag">$1</span>
+                        </div>
+                        <div class="vocab-card" data-audio="soap-audio">
+                            <span role="img" aria-label="Soap" style="font-size: 2rem;">🧼</span>
+                            <h3>soap</h3>
+                            <p>/soʊp/</p>
+                            <span class="price-tag">$2</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 20px;">💰 Money Words:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="dollar-audio">
+                            <span role="img" aria-label="Dollar" style="font-size: 2rem;">💵</span>
+                            <h3>dollar</h3>
+                            <p>/ˈdɒlər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="price-audio">
+                            <span role="img" aria-label="Price Tag" style="font-size: 2rem;">🏷️</span>
+                            <h3>price</h3>
+                            <p>/praɪs/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="buy-audio">
+                            <span role="img" aria-label="Buy" style="font-size: 2rem;">🛒</span>
+                            <h3>buy</h3>
+                            <p>/baɪ/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="sell-audio">
+                            <span role="img" aria-label="Sell" style="font-size: 2rem;">💰</span>
+                            <h3>sell</h3>
+                            <p>/sɛl/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="cheap-audio">
+                            <span role="img" aria-label="Cheap" style="font-size: 2rem;">👍</span>
+                            <h3>cheap</h3>
+                            <p>/tʃiːp/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="expensive-audio">
+                            <span role="img" aria-label="Expensive" style="font-size: 2rem;">💎</span>
+                            <h3>expensive</h3>
+                            <p>/ɪkˈspɛnsɪv/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="cashier-audio">
+                            <span role="img" aria-label="Cashier" style="font-size: 2rem;">💁</span>
+                            <h3>cashier</h3>
+                            <p>/kæˈʃɪər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="coin-audio">
+                            <span role="img" aria-label="Coin" style="font-size: 2rem;">🪙</span>
+                            <h3>coin</h3>
+                            <p>/kɔɪn/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match each word with a picture and price tag:</p>
+                        <div class="shopping-items">
+                            <div class="shopping-item">
+                                <span role="img" aria-label="Bread" style="font-size: 2rem;">🍞</span>
+                                <p>Bread</p>
+                                <div class="price">$2</div>
+                            </div>
+                            <div class="shopping-item">
+                                <span role="img" aria-label="Milk" style="font-size: 2rem;">🥛</span>
+                                <p>Milk</p>
+                                <div class="price">$3</div>
+                            </div>
+                            <div class="shopping-item">
+                                <span role="img" aria-label="Shirt" style="font-size: 2rem;">👕</span>
+                                <p>Shirt</p>
+                                <div class="price">$10</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">📝</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Key Structures:</h3>
+                    <div style="background-color: var(--red-bg); padding: 15px; border-radius: var(--border-radius); margin: 15px 0;">
+                        <p><strong>How much is the bread?</strong></p>
+                        <p><strong>I want to buy some apples.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Practice mini-dialogues in pairs:</p>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>How much is the rice?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>It's five dollars.</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>I want to buy it.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Reading">📄</span> Reading Paragraph</h3>
+                        <p><strong>Ali goes to the supermarket. He buys milk, bread, and fruit. The milk is \$2. The bread is \$1. The fruit is \$3. He pays the cashier.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension Questions</h3>
+                        <ol>
+                            <li>What does Ali buy?</li>
+                            <li>How much is the fruit?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Example">📝</span> Example Shopping List</h3>
+                        <div class="shopping-list">
+                            <div class="shopping-list-item">
+                                <span>Rice</span>
+                                <span>$5</span>
+                            </div>
+                            <div class="shopping-list-item">
+                                <span>Soap</span>
+                                <span>$2</span>
+                            </div>
+                            <div class="shopping-list-item">
+                                <span>Apple</span>
+                                <span>$1</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Create a list of <strong>3–5 items</strong> with real or imaginary prices:</p>
+                        <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);" placeholder="Example:
+1. Bread - $2
+2. Milk - $3
+3. Shirt - $10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Dialogue">💬</span> Roleplay Example</h3>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">Customer:</div>
+                                <div>How much is this shirt?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">Shopkeeper:</div>
+                                <div>It's \$10.</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">Customer:</div>
+                                <div>I want to buy it.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Use real or printed items to practice shopping conversations:</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-store"></i> Shopkeeper
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user"></i> Customer
+                            </button>
+                        </div>
+                        <p style="margin-top: 10px;">Switch roles for both buyer and seller</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen to price descriptions and select the correct item and price:</p>
+                        
+                        <div class="shopping-items" style="margin-top: 20px;">
+                            <div class="shopping-item" data-price="2">
+                                <span role="img" aria-label="Bread" style="font-size: 2rem;">🍞</span>
+                                <p>Bread</p>
+                                <div class="price">$2</div>
+                            </div>
+                            <div class="shopping-item" data-price="3">
+                                <span role="img" aria-label="Milk" style="font-size: 2rem;">🥛</span>
+                                <p>Milk</p>
+                                <div class="price">$3</div>
+                            </div>
+                            <div class="shopping-item" data-price="10">
+                                <span role="img" aria-label="Shirt" style="font-size: 2rem;">👕</span>
+                                <p>Shirt</p>
+                                <div class="price">$10</div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 20px;">Example Prompts:</h3>
+                        <ol>
+                            <li>"The bread costs two dollars."</li>
+                            <li>"This shirt is ten dollars."</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🎲</span> 7. Fun Activity: Mini Market Game</h2>
+                <div class="section-content">
+                    <p><strong>🛍️ Classroom Market Simulation:</strong></p>
+                    <ul>
+                        <li>Set up tables with labeled items and prices</li>
+                        <li>Use play money or coins</li>
+                        <li>Students roleplay as buyers and sellers</li>
+                    </ul>
+                    
+                    <div class="market-game">
+                        <h3>Practice:</h3>
+                        <ul style="text-align: left; max-width: 300px; margin: 0 auto;">
+                            <li>Asking prices</li>
+                            <li>Giving change</li>
+                            <li>Buying and selling</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 15px;">Play Money:</h3>
+                        <div class="play-money">
+                            <div class="money-item">$1</div>
+                            <div class="money-item">$5</div>
+                            <div class="money-item">$10</div>
+                            <div class="money-item">$20</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📌</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>Shopping and money vocabulary</li>
+                        <li>Questions like "How much is...?"</li>
+                        <li>Writing and reading shopping lists</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Write a shopping list of <strong>5 items</strong> with prices</li>
+                            <li>Ask a family member: "How much is this?" (e.g., TV, apple, shoes)</li>
+                        </ol>
+                        <p style="margin-top: 10px; font-style: italic;">Example: "How much is the bread?"</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Well done today!</strong></p>
+                    <p>Shopping is useful every day – and now you know how to talk about it in English!</p>
+                    <p style="margin-top: 10px;"><strong>Practice with your family or in real stores!</strong> <span role="img" aria-label="Shopping Cart">🛒</span><span role="img" aria-label="Money">💰</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-6.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit5-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit5-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit5-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit5-reading.mp3',
+                    'writing': 'https://example.com/audio/unit5-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit5-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit5-listening.mp3',
+                    'recap': 'https://example.com/audio/unit5-recap.mp3',
+                    // Shopping items audio
+                    'bread-audio': 'https://example.com/audio/bread.mp3',
+                    'milk-audio': 'https://example.com/audio/milk.mp3',
+                    'rice-audio': 'https://example.com/audio/rice.mp3',
+                    'shirt-audio': 'https://example.com/audio/shirt.mp3',
+                    'shoes-audio': 'https://example.com/audio/shoes.mp3',
+                    'apple-audio': 'https://example.com/audio/apple.mp3',
+                    'soap-audio': 'https://example.com/audio/soap.mp3',
+                    // Money words audio
+                    'dollar-audio': 'https://example.com/audio/dollar.mp3',
+                    'price-audio': 'https://example.com/audio/price.mp3',
+                    'buy-audio': 'https://example.com/audio/buy.mp3',
+                    'sell-audio': 'https://example.com/audio/sell.mp3',
+                    'cheap-audio': 'https://example.com/audio/cheap.mp3',
+                    'expensive-audio': 'https://example.com/audio/expensive.mp3',
+                    'cashier-audio': 'https://example.com/audio/cashier.mp3',
+                    'coin-audio': 'https://example.com/audio/coin.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit5-intro',
+                    'vocabulary': 'https://youtube.com/unit5-vocabulary',
+                    'grammar': 'https://youtube.com/unit5-grammar',
+                    'reading': 'https://youtube.com/unit5-reading',
+                    'writing': 'https://youtube.com/unit5-writing',
+                    'speaking': 'https://youtube.com/unit5-speaking',
+                    'listening': 'https://youtube.com/unit5-listening',
+                    'recap': 'https://youtube.com/unit5-recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Vocabulary card clicks
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const audioId = this.getAttribute('data-audio');
+                    if (audioId) {
+                        audioManager.playSection(audioId);
+                    }
+                });
+            });
+
+            // Shopping item clicks
+            document.querySelectorAll('.shopping-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const itemName = this.querySelector('p').textContent;
+                    const price = this.querySelector('.price').textContent;
+                    alert(`You selected ${itemName} for ${price}`);
+                    
+                    // Highlight the clicked item
+                    this.style.boxShadow = '0 0 0 3px var(--secondary-color)';
+                    setTimeout(() => {
+                        this.style.boxShadow = 'none';
+                    }, 1000);
+                });
+            });
+
+            // Listening activity - shopping items
+            const listeningBtn = document.querySelector('[data-section="listening"]');
+            if (listeningBtn) {
+                listeningBtn.addEventListener('click', function() {
+                    // Random shopping items for demonstration
+                    const items = [
+                        { name: "bread", price: 2 },
+                        { name: "milk", price: 3 },
+                        { name: "shirt", price: 10 }
+                    ];
+                    
+                    let currentIndex = 0;
+                    
+                    // Change highlighted item every 3 seconds
+                    const interval = setInterval(() => {
+                        // Remove highlight from all
+                        document.querySelectorAll('.shopping-item').forEach(item => {
+                            item.style.boxShadow = 'none';
+                        });
+                        
+                        if (currentIndex < items.length) {
+                            // Highlight current item
+                            const currentItem = items[currentIndex];
+                            const itemElement = document.querySelector(`.shopping-item[data-price="${currentItem.price}"]`);
+                            if (itemElement) {
+                                itemElement.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                            }
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 3000);
+                });
+            }
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

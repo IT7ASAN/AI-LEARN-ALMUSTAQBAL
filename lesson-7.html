@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7 – Safety and Rules | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --red-bg: #ffebee;
+            --orange-bg: #fff3e0;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Safety Signs */
+        .safety-sign {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            margin: 10px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sign-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .danger-sign {
+            background-color: #ffebee;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .warning-sign {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .safe-sign {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+            color: #7b1fa2;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Fill in Blanks */
+        .fill-blank {
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: 20px 0;
+        }
+
+        .blank {
+            border-bottom: 2px solid var(--primary-color);
+            padding: 0 5px;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Safety Hunt */
+        .safety-hunt {
+            background-color: var(--orange-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .safety-sign {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+
+            .safety-sign {
+                width: 80px;
+                height: 80px;
+                padding: 10px;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 7 – Safety and Rules</h2>
+            <p>Learn to recognize safety signs and follow important rules.</p>
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+            alt="Safety signs symbols" class="course-image">
+       
+       
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Recognize basic safety signs and warnings</li>
+                        <li>Use imperative sentences to follow and give rules</li>
+                        <li>Practice what to do in emergency situations</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Warning Sign">🚧</span> 1. Vocabulary: Safety and Rules</h2>
+                <div class="section-content">
+                    <h3>⚠️ Safety Words:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="danger-audio">
+                            <span role="img" aria-label="Danger" style="font-size: 2rem;">⚠️</span>
+                            <h3>danger</h3>
+                            <p>/ˈdeɪndʒər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="stop-audio">
+                            <span role="img" aria-label="Stop" style="font-size: 2rem;">🛑</span>
+                            <h3>stop</h3>
+                            <p>/stɒp/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="emergency-audio">
+                            <span role="img" aria-label="Emergency" style="font-size: 2rem;">🚨</span>
+                            <h3>emergency</h3>
+                            <p>/ɪˈmɜːrdʒənsi/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="help-audio">
+                            <span role="img" aria-label="Help" style="font-size: 2rem;">🆘</span>
+                            <h3>help</h3>
+                            <p>/hɛlp/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="fire-audio">
+                            <span role="img" aria-label="Fire" style="font-size: 2rem;">🔥</span>
+                            <h3>fire</h3>
+                            <p>/faɪər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="exit-audio">
+                            <span role="img" aria-label="Exit" style="font-size: 2rem;">🚪</span>
+                            <h3>exit</h3>
+                            <p>/ˈɛɡzɪt/</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 20px;">📜 Rules Words:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="dont-audio">
+                            <span role="img" aria-label="Don't" style="font-size: 2rem;">🚫</span>
+                            <h3>don't</h3>
+                            <p>/doʊnt/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="must-audio">
+                            <span role="img" aria-label="Must" style="font-size: 2rem;">❗</span>
+                            <h3>must</h3>
+                            <p>/mʌst/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="wear-audio">
+                            <span role="img" aria-label="Wear" style="font-size: 2rem;">👷</span>
+                            <h3>wear</h3>
+                            <p>/wɛər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="cross-audio">
+                            <span role="img" aria-label="Cross" style="font-size: 2rem;">🚸</span>
+                            <h3>cross</h3>
+                            <p>/krɒs/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="walk-audio">
+                            <span role="img" aria-label="Walk" style="font-size: 2rem;">🚶</span>
+                            <h3>walk</h3>
+                            <p>/wɔːk/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="run-audio">
+                            <span role="img" aria-label="Run" style="font-size: 2rem;">🏃</span>
+                            <h3>run</h3>
+                            <p>/rʌn/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match signs with the correct words and meanings:</p>
+                        <div class="sign-grid">
+                            <div class="safety-sign danger-sign">
+                                <span role="img" aria-label="Warning" style="font-size: 2rem;">⚠️</span>
+                                <p>Danger</p>
+                            </div>
+                            <div class="safety-sign danger-sign">
+                                <span role="img" aria-label="No Entry" style="font-size: 2rem;">🚫</span>
+                                <p>Don't enter</p>
+                            </div>
+                            <div class="safety-sign safe-sign">
+                                <span role="img" aria-label="Exit" style="font-size: 2rem;">🚪</span>
+                                <p>Exit</p>
+                            </div>
+                            <div class="safety-sign warning-sign">
+                                <span role="img" aria-label="Fire" style="font-size: 2rem;">🔥</span>
+                                <p>Fire</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">📝</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Imperative Sentences (used to give commands or instructions)</h3>
+                    <div style="background-color: var(--red-bg); padding: 15px; border-radius: var(--border-radius); margin: 15px 0;">
+                        <p><strong>Stop!</strong></p>
+                        <p><strong>Don't touch that!</strong></p>
+                        <p><strong>Be careful.</strong></p>
+                        <p><strong>Wear a helmet.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Fill in the blanks:</p>
+                        <div class="fill-blank">
+                            <p><span class="blank" data-answer="cross">_____</span> the road at the sign.</p>
+                            <p>Don't <span class="blank" data-answer="run">_____</span> near the fire.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Reading">📄</span> Safety Notice</h3>
+                        <p><strong>In case of fire, do not run. Use the stairs. Stay calm and follow the signs to the exit. Ask for help if needed.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension Questions</h3>
+                        <ol>
+                            <li>What should you do in a fire?</li>
+                            <li>What should you not do?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Notice
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Example">📝</span> Example Rules</h3>
+                        <ul>
+                            <li>Don't run in the hallway.</li>
+                            <li>Wear shoes outside.</li>
+                            <li>Cross the street carefully.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Write 3 safety rules you follow at <strong>home</strong> or <strong>school</strong>:</p>
+                        <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);" placeholder="Example:
+1. Don't play with fire.
+2. Wear a seatbelt in the car.
+3. Look both ways before crossing."></textarea>
+                        </div>
+                        <div class="sign-grid" style="margin-top: 15px;">
+                            <div class="safety-sign danger-sign">
+                                <span role="img" aria-label="No Running" style="font-size: 2rem;">🚫🏃</span>
+                                <p>No running</p>
+                            </div>
+                            <div class="safety-sign warning-sign">
+                                <span role="img" aria-label="Helmet" style="font-size: 2rem;">⛑️</span>
+                                <p>Wear helmet</p>
+                            </div>
+                            <div class="safety-sign safe-sign">
+                                <span role="img" aria-label="Crosswalk" style="font-size: 2rem;">🚸</span>
+                                <p>Use crosswalk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Dialogue">💬</span> Roleplay Example</h3>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>Don't touch the fire.</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>Okay, I won't.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Students practice giving and following safety rules:</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user-shield"></i> Safety Officer
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user"></i> Student
+                            </button>
+                        </div>
+                        <p style="margin-top: 10px;">Try roleplaying a fire drill, street crossing, or school safety scene</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Teacher says safety commands → students act out or point to the correct picture:</p>
+                        
+                        <div class="sign-grid" style="margin-top: 20px;">
+                            <div class="safety-sign danger-sign" data-action="stop">
+                                <span role="img" aria-label="Stop" style="font-size: 2rem;">🛑</span>
+                                <p>Stop</p>
+                            </div>
+                            <div class="safety-sign warning-sign" data-action="walk">
+                                <span role="img" aria-label="Walk" style="font-size: 2rem;">🚶</span>
+                                <p>Walk</p>
+                            </div>
+                            <div class="safety-sign safe-sign" data-action="exit">
+                                <span role="img" aria-label="Exit" style="font-size: 2rem;">🚪</span>
+                                <p>Exit</p>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 20px;">Example Prompts:</h3>
+                        <ol>
+                            <li>"Wear your seatbelt."</li>
+                            <li>"Walk, don't run!"</li>
+                            <li>"Stop at the red sign."</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Magnifying Glass">🔍</span> 7. Fun Activity: Safety Sign Hunt</h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Place printed safety signs around the classroom or home</li>
+                        <li>Students go on a "Safety Hunt"</li>
+                        <li>Each time they find a sign, they must name it and say what it means</li>
+                    </ul>
+                    
+                    <div class="safety-hunt">
+                        <h3>Encourage creativity:</h3>
+                        <p>Students can make their own signs using crayons or markers</p>
+                        
+                        <div class="sign-grid" style="margin-top: 15px;">
+                            <div class="safety-sign danger-sign">
+                                <span role="img" aria-label="No Swimming" style="font-size: 2rem;">🚫🏊</span>
+                                <p>No swimming</p>
+                            </div>
+                            <div class="safety-sign warning-sign">
+                                <span role="img" aria-label="Wet Floor" style="font-size: 2rem;">💦</span>
+                                <p>Wet floor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📌</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>Important safety vocabulary and signs</li>
+                        <li>How to give and follow rules using imperatives</li>
+                        <li>What to do in emergency situations</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Draw <strong>2 safety signs</strong> and write what they mean</li>
+                            <li>Talk to someone at home about one <strong>safety rule</strong> you follow</li>
+                        </ol>
+                        <p style="margin-top: 10px; font-style: italic;">Example: "We always wear seatbelts in the car."</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Traffic Light">🚦</span> <strong>Excellent job today!</strong></p>
+                    <p>Understanding safety helps you stay <strong>smart and strong</strong>.</p>
+                    <p style="margin-top: 10px;"><strong>Keep learning and helping others stay safe too!</strong> <span role="img" aria-label="Speech Bubble">💬</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-8.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit7-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit7-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit7-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit7-reading.mp3',
+                    'writing': 'https://example.com/audio/unit7-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit7-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit7-listening.mp3',
+                    'recap': 'https://example.com/audio/unit7-recap.mp3',
+                    // Safety words audio
+                    'danger-audio': 'https://example.com/audio/danger.mp3',
+                    'stop-audio': 'https://example.com/audio/stop.mp3',
+                    'emergency-audio': 'https://example.com/audio/emergency.mp3',
+                    'help-audio': 'https://example.com/audio/help.mp3',
+                    'fire-audio': 'https://example.com/audio/fire.mp3',
+                    'exit-audio': 'https://example.com/audio/exit.mp3',
+                    // Rules words audio
+                    'dont-audio': 'https://example.com/audio/dont.mp3',
+                    'must-audio': 'https://example.com/audio/must.mp3',
+                    'wear-audio': 'https://example.com/audio/wear.mp3',
+                    'cross-audio': 'https://example.com/audio/cross.mp3',
+                    'walk-audio': 'https://example.com/audio/walk.mp3',
+                    'run-audio': 'https://example.com/audio/run.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit7-intro',
+                    'vocabulary': 'https://youtube.com/unit7-vocabulary',
+                    'grammar': 'https://youtube.com/unit7-grammar',
+                    'reading': 'https://youtube.com/unit7-reading',
+                    'writing': 'https://youtube.com/unit7-writing',
+                    'speaking': 'https://youtube.com/unit7-speaking',
+                    'listening': 'https://youtube.com/unit7-listening',
+                    'recap': 'https://youtube.com/unit7-recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Vocabulary card clicks
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const audioId = this.getAttribute('data-audio');
+                    if (audioId) {
+                        audioManager.playSection(audioId);
+                    }
+                });
+            });
+
+            // Safety sign clicks
+            document.querySelectorAll('.safety-sign').forEach(sign => {
+                sign.addEventListener('click', function() {
+                    const signText = this.querySelector('p').textContent;
+                    alert(`Safety sign: ${signText}`);
+                    
+                    // Highlight the clicked sign
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 500);
+                });
+            });
+
+            // Listening activity - safety commands
+            const listeningBtn = document.querySelector('[data-section="listening"]');
+            if (listeningBtn) {
+                listeningBtn.addEventListener('click', function() {
+                    // Random safety actions for demonstration
+                    const actions = ['stop', 'walk', 'exit'];
+                    
+                    let currentIndex = 0;
+                    
+                    // Change highlighted action every 3 seconds
+                    const interval = setInterval(() => {
+                        // Remove highlight from all
+                        document.querySelectorAll('.safety-sign').forEach(sign => {
+                            sign.style.boxShadow = 'none';
+                        });
+                        
+                        if (currentIndex < actions.length) {
+                            // Highlight current action
+                            const currentAction = actions[currentIndex];
+                            const actionSign = document.querySelector(`.safety-sign[data-action="${currentAction}"]`);
+                            if (actionSign) {
+                                actionSign.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                            }
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 3000);
+                });
+            }
+
+            // Fill in blanks interaction
+            document.querySelectorAll('.blank').forEach(blank => {
+                blank.addEventListener('click', function() {
+                    const answer = this.getAttribute('data-answer');
+                    this.textContent = answer;
+                    this.style.color = 'var(--primary-color)';
+                    this.style.fontWeight = 'bold';
+                });
+            });
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

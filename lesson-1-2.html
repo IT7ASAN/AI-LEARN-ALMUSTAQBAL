@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2 – Basic Words and Greetings | English Literacy Course</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Tables */
+        .phrase-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .phrase-table caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .phrase-table th,
+        .phrase-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .phrase-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .phrase-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+        }
+
+        /* Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 10px;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(44, 90, 125, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-next {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-next:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Game and Activity Styles */
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .game-option {
+            padding: 10px 15px;
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .game-option:hover {
+            background-color: var(--gray-medium);
+        }
+
+        .game-option.selected {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        .game-option.correct {
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+            color: var(--dark-color);
+        }
+
+        .game-option.incorrect {
+            border-color: #e74c3c;
+            background-color: #ffebee;
+            color: var(--dark-color);
+        }
+
+        .match-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .match-item {
+            padding: 10px;
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .match-item.selected {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        .match-item.matched {
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+            color: var(--dark-color);
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-modal-content {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--border-radius);
+        }
+
+        /* Feedback Message */
+        .feedback-message {
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin: 10px 0;
+            text-align: center;
+            display: none;
+        }
+
+        .feedback-correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+
+        .feedback-incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .match-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .phrase-table {
+                font-size: 0.9rem;
+            }
+
+            .phrase-table th,
+            .phrase-table td {
+                padding: 8px;
+            }
+            
+            .dialogue-line {
+                flex-direction: column;
+            }
+            
+            .dialogue-speaker {
+                margin-bottom: 3px;
+            }
+
+            .section-actions {
+                flex-direction: column;
+            }
+
+            .section-btn {
+                width: 100%;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 2 – Basic Words and Greetings</h2>
+            <p>Learn common English greetings, polite words, and how to start simple conversations.</p>
+            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="People greeting each other" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Speech Bubble">💬</span> Lesson Objective</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Use common English greetings in daily life</li>
+                        <li>Understand and say basic words like 'yes', 'no', 'please', and 'thank you'</li>
+                        <li>Practice short, polite conversations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Greetings Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Waving Hand">👋</span> 1. Introduction to Greetings</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Greeting means saying hello to someone. Here are common greetings in English:</p>
+                    
+                    <table class="phrase-table" aria-label="Common English greetings and when to use them">
+                        <caption>Greetings and When to Use Them</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Greeting</th>
+                                <th scope="col">When to Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hello</td>
+                                <td>Any time</td>
+                            </tr>
+                            <tr>
+                                <td>Hi</td>
+                                <td>Informal situations</td>
+                            </tr>
+                            <tr>
+                                <td>Good morning</td>
+                                <td>Before 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Good afternoon</td>
+                                <td>12:00 PM – 6:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Good evening</td>
+                                <td>After 6:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-section">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Practice:</h3>
+                        <p>Teacher says "Hello", students reply "Hello!"</p>
+                        <button class="btn btn-secondary practice-btn" style="min-width: auto; margin-top: 10px;">
+                            <i class="fas fa-volume-up"></i> Listen and Repeat
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saying Goodbye Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Waving Hand">👋</span> 2. Saying Goodbye</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>When we leave, we say goodbye in different ways:</p>
+                    
+                    <table class="phrase-table" aria-label="Ways to say goodbye in English">
+                        <caption>Goodbye Phrases</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Phrase</th>
+                                <th scope="col">Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Goodbye</td>
+                                <td>General goodbye</td>
+                            </tr>
+                            <tr>
+                                <td>Bye</td>
+                                <td>Informal goodbye</td>
+                            </tr>
+                            <tr>
+                                <td>See you later</td>
+                                <td>When you'll meet again</td>
+                            </tr>
+                            <tr>
+                                <td>Good night</td>
+                                <td>Before sleep</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-section">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Practice:</h3>
+                        <p>Say goodbye to a classmate:</p>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">You:</div>
+                                <div>"Bye!"</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">Friend:</div>
+                                <div>"See you later!"</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary practice-btn" style="min-width: auto; margin-top: 10px;">
+                            <i class="fas fa-volume-up"></i> Listen and Repeat
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Polite Words Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Sparkles">✨</span> 3. Polite Words (Magic Words)</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>These are magic words that make us polite:</p>
+                    
+                    <table class="phrase-table" aria-label="Polite words in English with examples">
+                        <caption>Polite Words and Examples</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Word</th>
+                                <th scope="col">Use Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Please</td>
+                                <td>"Please pass the book."</td>
+                            </tr>
+                            <tr>
+                                <td>Thank you</td>
+                                <td>"Thank you for your help."</td>
+                            </tr>
+                            <tr>
+                                <td>You're welcome</td>
+                                <td>"You're welcome!"</td>
+                            </tr>
+                            <tr>
+                                <td>Excuse me</td>
+                                <td>"Excuse me, can I ask a question?"</td>
+                            </tr>
+                            <tr>
+                                <td>Sorry</td>
+                                <td>"I'm sorry I was late."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-section">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Match the word to the situation:</p>
+                        <div class="game-container" style="margin-top: 15px;">
+                            <div class="game-option" data-correct="thank you">Someone gives you a gift</div>
+                            <div class="game-option" data-correct="excuse me">You need to pass in front of someone</div>
+                            <div class="game-option" data-correct="please">You want someone to help you</div>
+                        </div>
+                        <div class="feedback-message"></div>
+                        <button class="btn btn-secondary check-answer-btn" style="min-width: auto; margin-top: 10px;">
+                            <i class="fas fa-check"></i> Check Answer
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yes and No Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Thumbs Up">👍</span> 4. Yes and No</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>These are the two most basic answers in English:</p>
+                    
+                    <table class="phrase-table" aria-label="Using yes and no in English">
+                        <caption>Using Yes and No</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Word</th>
+                                <th scope="col">Use Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Yes</td>
+                                <td>"Do you like apples?" – Yes <span role="img" aria-label="Apple">🍎</span></td>
+                            </tr>
+                            <tr>
+                                <td>No</td>
+                                <td>"Are you sad?" – No <span role="img" aria-label="Happy Face">😊</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-section">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Practice:</h3>
+                        <p>Answer these questions:</p>
+                        <div class="game-container" style="margin-top: 15px;">
+                            <div class="practice-item">
+                                <p>"Are you happy today?"</p>
+                                <div class="game-option" data-correct="yes">Yes</div>
+                                <div class="game-option" data-correct="no">No</div>
+                            </div>
+                            <div class="practice-item">
+                                <p>"Do you like music?"</p>
+                                <div class="game-option" data-correct="yes">Yes</div>
+                                <div class="game-option" data-correct="no">No</div>
+                            </div>
+                        </div>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Short Conversations Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Conversation">💬</span> 5. Short Conversations (Dialogue Practice)</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Practice these simple dialogues:</p>
+                    
+                    <div class="dialogue-card">
+                        <h3>Example 1</h3>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">A:</div>
+                            <div>Hello!</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">B:</div>
+                            <div>Hi!</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">A:</div>
+                            <div>How are you?</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">B:</div>
+                            <div>I'm fine, thank you.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dialogue-card">
+                        <h3>Example 2</h3>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">A:</div>
+                            <div>Good morning!</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">B:</div>
+                            <div>Good morning!</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">A:</div>
+                            <div>What is your name?</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">B:</div>
+                            <div>My name is Ali.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Practice the dialogues in pairs.</p>
+                        <button class="btn btn-primary pair-practice-btn" style="min-width: auto; margin-top: 10px;">
+                            <i class="fas fa-users"></i> Start Pair Practice
+                        </button>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game Time Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🎮</span> 6. Game Time – Greeting Match</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Match the greeting with the time of day:</p>
+                    
+                    <div class="match-container" style="margin: 20px 0;">
+                        <div class="match-group">
+                            <div class="match-item" data-match="1">Good morning</div>
+                            <div class="match-item" data-match="2">Good evening</div>
+                            <div class="match-item" data-match="3">Hi</div>
+                        </div>
+                        
+                        <div class="match-group">
+                            <div class="match-item" data-match="1">Before 12:00 PM</div>
+                            <div class="match-item" data-match="2">After 6:00 PM</div>
+                            <div class="match-item" data-match="3">Any time (informal)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-message"></div>
+                    
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn btn-primary check-match-btn">
+                            <i class="fas fa-check"></i> Check Answers
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Writing Practice Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✏️</span> 7. Writing Practice</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Write these words:</p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+                        <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                            <p style="font-size: 1.5rem; margin-bottom: 10px;">Hello</p>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                        </div>
+                        
+                        <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                            <p style="font-size: 1.5rem; margin-bottom: 10px;">Goodbye</p>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                        </div>
+                        
+                        <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                            <p style="font-size: 1.5rem; margin-bottom: 10px;">Please</p>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                        </div>
+                        
+                        <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                            <p style="font-size: 1.5rem; margin-bottom: 10px;">Thank you</p>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                            <div style="height: 2px; background: var(--gray-medium); margin-bottom: 10px;"></div>
+                        </div>
+                    </div>
+                    
+                    <p><span role="img" aria-label="Checkmark">✅</span> Trace with finger or pen. Encourage repetition.</p>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-headphones"></i> Listen to Greetings
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-video"></i> Watch Conversation Video
+                </button>
+            </div>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📋</span> 8. Recap & Homework</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p><strong>Today we learned:</strong></p>
+                    <ul>
+                        <li>How to say hello and goodbye</li>
+                        <li>How to use polite words</li>
+                        <li>How to say yes and no</li>
+                        <li>How to start a short conversation</li>
+                    </ul>
+                    
+                    <div class="homework-section" style="margin-top: 20px;">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Greet your family using "Good morning" or "Hello"</li>
+                            <li>Say "Thank you" three times today</li>
+                            <li>Practice the short dialogues with someone at home</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="text-align: center; background-color: #f8f4ff;">
+                <h2 class="section-title"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.2rem;"><span role="img" aria-label="Clapping Hands">👏</span> Great job!</p>
+                    <p>You are learning how to talk in English politely and confidently.</p>
+                    <p style="margin-top: 10px;">Keep practicing every day – you're doing amazing! <span role="img" aria-label="Heart">💖</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <div class="action-buttons" style="margin-top: 20px;">
+                <a href="lesson-3.html" class="btn btn-next">
+                    <i class="fas fa-arrow-right"></i> Next Lesson: Numbers and Colors
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container">
+                <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Audio for greetings and phrases
+            const greetingAudios = {
+                'hello': 'https://www.soundjay.com/human/sounds/hello-1.mp3',
+                'hi': 'https://www.soundjay.com/human/sounds/hi-1.mp3',
+                'good morning': 'https://www.soundjay.com/human/sounds/good-morning-1.mp3',
+                'goodbye': 'https://www.soundjay.com/human/sounds/goodbye-1.mp3',
+                'please': 'https://www.soundjay.com/human/sounds/please-1.mp3',
+                'thank you': 'https://www.soundjay.com/human/sounds/thank-you-1.mp3',
+                'yes': 'https://www.soundjay.com/buttons/sounds/button-09.mp3',
+                'no': 'https://www.soundjay.com/buttons/sounds/button-10.mp3',
+                'listen': 'https://www.soundjay.com/buttons/sounds/button-21.mp3'
+            };
+            
+            // Play audio when buttons are clicked
+            const listenButtons = document.querySelectorAll('.section-btn-audio, .practice-btn');
+            
+            listenButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const audio = new Audio(greetingAudios['listen']);
+                    audio.play();
+                    
+                    // Visual feedback
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+            
+            // Video modal functionality
+            const videoModal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+            const videoBtns = document.querySelectorAll('.section-btn-video');
+            const closeModal = document.querySelector('.close-modal');
+            
+            videoBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoUrl = this.getAttribute('data-video');
+                    videoFrame.src = videoUrl;
+                    videoModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                videoFrame.src = '';
+                videoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    videoFrame.src = '';
+                    videoModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Pair practice button
+            const pairPracticeBtn = document.querySelector('.pair-practice-btn');
+            pairPracticeBtn.addEventListener('click', function() {
+                const feedback = this.nextElementSibling;
+                feedback.textContent = "Find a partner and take turns practicing the dialogues!";
+                feedback.style.display = 'block';
+                feedback.className = 'feedback-message feedback-correct';
+                
+                setTimeout(() => {
+                    feedback.style.display = 'none';
+                }, 3000);
+            });
+            
+            // Activity: Match the word to the situation
+            const gameOptions = document.querySelectorAll('.game-option');
+            let selectedOption = null;
+            
+            gameOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selection from all options in this container
+                    const container = this.closest('.game-container, .practice-item');
+                    container.querySelectorAll('.game-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Select this option
+                    this.classList.add('selected');
+                    selectedOption = this;
+                    
+                    // Check if this is a yes/no question
+                    if (this.closest('.practice-item')) {
+                        const correctAnswer = this.getAttribute('data-correct');
+                        const feedback = container.nextElementSibling;
+                        
+                        if (correctAnswer === 'yes' || correctAnswer === 'no') {
+                            this.classList.add('correct');
+                            feedback.textContent = "Good job!";
+                            feedback.style.display = 'block';
+                            feedback.className = 'feedback-message feedback-correct';
+                            
+                            setTimeout(() => {
+                                feedback.style.display = 'none';
+                                this.classList.remove('correct');
+                            }, 2000);
+                        }
+                    }
+                });
+            });
+            
+            // Check answer button for polite words activity
+            const checkAnswerBtn = document.querySelector('.check-answer-btn');
+            if (checkAnswerBtn) {
+                checkAnswerBtn.addEventListener('click', function() {
+                    const container = this.closest('.practice-section');
+                    const options = container.querySelectorAll('.game-option');
+                    const feedback = container.querySelector('.feedback-message');
+                    
+                    let allCorrect = true;
+                    
+                    options.forEach(option => {
+                        const userAnswer = option.classList.contains('selected');
+                        const correctAnswer = option.getAttribute('data-correct');
+                        
+                        if (userAnswer) {
+                            if (option.textContent.toLowerCase().includes(correctAnswer)) {
+                                option.classList.add('correct');
+                                feedback.textContent = "Correct! " + option.textContent + " is the right word for this situation.";
+                                feedback.className = 'feedback-message feedback-correct';
+                            } else {
+                                option.classList.add('incorrect');
+                                feedback.textContent = "Not quite. Try again!";
+                                feedback.className = 'feedback-message feedback-incorrect';
+                                allCorrect = false;
+                            }
+                        }
+                    });
+                    
+                    feedback.style.display = 'block';
+                    
+                    if (allCorrect) {
+                        setTimeout(() => {
+                            feedback.style.display = 'none';
+                            options.forEach(option => {
+                                option.classList.remove('correct', 'incorrect', 'selected');
+                            });
+                        }, 3000);
+                    }
+                });
+            }
+            
+            // Matching game functionality
+            const matchItems = document.querySelectorAll('.match-item');
+            let firstSelected = null;
+            
+            matchItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // If no item is selected yet
+                    if (!firstSelected) {
+                        firstSelected = this;
+                        this.classList.add('selected');
+                    } 
+                    // If we're selecting the second item
+                    else if (this !== firstSelected) {
+                        const match1 = firstSelected.getAttribute('data-match');
+                        const match2 = this.getAttribute('data-match');
+                        
+                        // Check if they match
+                        if (match1 === match2) {
+                            firstSelected.classList.add('matched');
+                            this.classList.add('matched');
+                            
+                            const feedback = document.querySelector('.match-container + .feedback-message');
+                            feedback.textContent = "Correct match!";
+                            feedback.className = 'feedback-message feedback-correct';
+                            feedback.style.display = 'block';
+                            
+                            setTimeout(() => {
+                                feedback.style.display = 'none';
+                            }, 2000);
+                        } else {
+                            const feedback = document.querySelector('.match-container + .feedback-message');
+                            feedback.textContent = "Not a match. Try again!";
+                            feedback.className = 'feedback-message feedback-incorrect';
+                            feedback.style.display = 'block';
+                            
+                            setTimeout(() => {
+                                feedback.style.display = 'none';
+                            }, 2000);
+                        }
+                        
+                        // Reset selection
+                        firstSelected.classList.remove('selected');
+                        this.classList.remove('selected');
+                        firstSelected = null;
+                    }
+                });
+            });
+            
+            // Check match answers button
+            const checkMatchBtn = document.querySelector('.check-match-btn');
+            if (checkMatchBtn) {
+                checkMatchBtn.addEventListener('click', function() {
+                    const matchedItems = document.querySelectorAll('.match-item.matched');
+                    const feedback = document.querySelector('.match-container + .feedback-message');
+                    
+                    if (matchedItems.length === 6) {
+                        feedback.textContent = "Perfect! All matches are correct!";
+                        feedback.className = 'feedback-message feedback-correct';
+                    } else {
+                        feedback.textContent = `You have ${matchedItems.length/2} out of 3 correct matches. Keep trying!`;
+                        feedback.className = 'feedback-message feedback-incorrect';
+                    }
+                    
+                    feedback.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

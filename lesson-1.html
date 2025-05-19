@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 – My Family and Friends | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Grammar Tables */
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .grammar-table caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .grammar-table th,
+        .grammar-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .grammar-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .grammar-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Reading Section */
+        .reading-passage {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .grammar-table {
+                font-size: 0.9rem;
+            }
+
+            .grammar-table th,
+            .grammar-table td {
+                padding: 8px;
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 1 – My Family and Friends</h2>
+            <p>Learn vocabulary for family members and friends, and practice talking about them using pronouns and possessives.</p>
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Happy diverse family sitting together" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Graduation Cap">🎓</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Identify family members and friends using vocabulary</li>
+                        <li>Use subject pronouns and possessives correctly</li>
+                        <li>Read, write, and talk about your family and friends</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Brain">🧠</span> 1. Vocabulary: Family and Friends</h2>
+                <div class="section-content">
+                    <h3>👪 Family Members:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Mother">
+                            <h3>mother</h3>
+                            <p>/ˈmʌðər/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Father">
+                            <h3>father</h3>
+                            <p>/ˈfɑːðər/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Sister">
+                            <h3>sister</h3>
+                            <p>/ˈsɪstər/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Brother">
+                            <h3>brother</h3>
+                            <p>/ˈbrʌðər/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1551847812-f815b31ae67c?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Grandmother">
+                            <h3>grandmother</h3>
+                            <p>/ˈɡrænˌmʌðər/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Grandfather">
+                            <h3>grandfather</h3>
+                            <p>/ˈɡrænˌfɑːðər/</p>
+                        </div>
+                    </div>
+
+                    <h3>👫 Friends and Others:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Friend">
+                            <h3>friend</h3>
+                            <p>/frend/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Neighbor">
+                            <h3>neighbor</h3>
+                            <p>/ˈneɪbər/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Classmate">
+                            <h3>classmate</h3>
+                            <p>/ˈklæsmeɪt/</p>
+                        </div>
+                        <div class="vocab-card">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Best friend">
+                            <h3>best friend</h3>
+                            <p>/best frend/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match each word with the correct picture:</p>
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-gamepad"></i> Start Matching Game
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Subject Pronouns:</h3>
+                    <table class="grammar-table" aria-label="Subject pronouns table">
+                        <thead>
+                            <tr>
+                                <th>Pronoun</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I</td>
+                                <td>I am Ali.</td>
+                            </tr>
+                            <tr>
+                                <td>you</td>
+                                <td>You are my friend.</td>
+                            </tr>
+                            <tr>
+                                <td>he</td>
+                                <td>He is my brother.</td>
+                            </tr>
+                            <tr>
+                                <td>she</td>
+                                <td>She is my sister.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>📌 Possessive Adjectives:</h3>
+                    <table class="grammar-table" aria-label="Possessive adjectives table">
+                        <thead>
+                            <tr>
+                                <th>Possessive</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>my</td>
+                                <td>This is my brother.</td>
+                            </tr>
+                            <tr>
+                                <td>your</td>
+                                <td>Is this your book?</td>
+                            </tr>
+                            <tr>
+                                <td>his</td>
+                                <td>His name is Ahmed.</td>
+                            </tr>
+                            <tr>
+                                <td>her</td>
+                                <td>Her friend is nice.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Complete the sentence: "This is _____ friend."</p>
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-edit"></i> Practice Now
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="reading-passage">
+                        <p>This is my family. I have one brother and one sister. My mother is kind. My father is a teacher. We live together in a house.</p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension Questions</h3>
+                        <ol>
+                            <li>How many brothers does he have?</li>
+                            <li>What is his father's job?</li>
+                        </ol>
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-check-circle"></i> Check Answers
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <h3>Example:</h3>
+                    <div class="reading-passage">
+                        <p>My name is Sara. I have two sisters. My mother is a nurse. My best friend is Lina.</p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <ol>
+                            <li>Fill in the blanks with your personal information</li>
+                            <li>Write two short sentences about your family</li>
+                        </ol>
+                        <textarea class="writing-area" rows="4" style="width: 100%; padding: 10px; border-radius: var(--border-radius); border: 1px solid var(--gray-medium); margin: 10px 0;"></textarea>
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-paper-plane"></i> Submit Writing
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <h3>Conversation Example:</h3>
+                    <div class="reading-passage">
+                        <p>A: Who is he?<br>
+                        B: He is my brother.<br>
+                        A: What is your mother's name?<br>
+                        B: Her name is Huda.</p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Introduce your friend to the class using simple sentences.</p>
+                        <button class="section-btn section-btn-practice record-btn">
+                            <i class="fas fa-microphone"></i> Record Your Answer
+                        </button>
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-users"></i> Practice with Partner
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen to a short audio about a family.</p>
+                        <button class="section-btn section-btn-audio">
+                            <i class="fas fa-play"></i> Play Audio
+                        </button>
+                        
+                        <h3 style="margin-top: 20px;">Questions to Answer:</h3>
+                        <ol>
+                            <li>Who is the speaker talking about?</li>
+                            <li>What is the sister's name?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Again
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Puzzle">🧩</span> 7. Fun Activity: Family Tree</h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Use names and pictures to create your family tree</li>
+                        <li>You can draw or use printed templates</li>
+                    </ul>
+                    <p style="margin-top: 10px;">Great for visual learning and personal connection!</p>
+                    
+                    <div class="section-actions" style="margin-top: 20px;">
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-download"></i> Download Template
+                        </button>
+                        <button class="section-btn section-btn-practice">
+                            <i class="fas fa-image"></i> View Example
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📝</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today's Key Points:</h3>
+                    <ul>
+                        <li>Vocabulary: family and friends</li>
+                        <li>Grammar: pronouns & possessives</li>
+                        <li>Practice in reading, writing, and speaking</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 15px;">Homework:</h3>
+                    <ol>
+                        <li>Draw your family tree and label the members in English</li>
+                        <li>Write 3 short sentences about your family or best friend</li>
+                    </ol>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Great job today!</strong></p>
+                    <p>Talking about your family is a fun and helpful way to practice English.</p>
+                    <p style="margin-top: 10px;"><strong>Keep learning and speaking — you're doing amazing!</strong> <span role="img" aria-label="Strong Arm">💪</span><span role="img" aria-label="Speech Bubble">💬</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="lesson-2.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Audio Management System
+            const audioManager = {
+                // Audio files for vocabulary
+                vocabAudio: {
+                    'mother': 'https://www.soundjay.com/human/sounds/mother-01.mp3',
+                    'father': 'https://www.soundjay.com/human/sounds/father-01.mp3',
+                    'sister': 'https://www.soundjay.com/human/sounds/sister-01.mp3',
+                    'brother': 'https://www.soundjay.com/human/sounds/brother-01.mp3',
+                    'grandmother': 'https://www.soundjay.com/human/sounds/grandmother-01.mp3',
+                    'grandfather': 'https://www.soundjay.com/human/sounds/grandfather-01.mp3',
+                    'friend': 'https://www.soundjay.com/human/sounds/friend-01.mp3',
+                    'neighbor': 'https://www.soundjay.com/human/sounds/neighbor-01.mp3',
+                    'classmate': 'https://www.soundjay.com/human/sounds/classmate-01.mp3',
+                    'best friend': 'https://www.soundjay.com/human/sounds/best-friend-01.mp3'
+                },
+                
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/intro.mp3',
+                    'vocabulary': 'https://example.com/audio/vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/grammar.mp3',
+                    'reading': 'https://example.com/audio/reading.mp3',
+                    'writing': 'https://example.com/audio/writing.mp3',
+                    'speaking': 'https://example.com/audio/speaking.mp3',
+                    'listening': 'https://example.com/audio/listening.mp3',
+                    'recap': 'https://example.com/audio/recap.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/intro',
+                    'vocabulary': 'https://youtube.com/vocabulary',
+                    'grammar': 'https://youtube.com/grammar',
+                    'reading': 'https://youtube.com/reading',
+                    'writing': 'https://youtube.com/writing',
+                    'speaking': 'https://youtube.com/speaking',
+                    'listening': 'https://youtube.com/listening',
+                    'recap': 'https://youtube.com/recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play sound function
+                playSound: function(soundKey) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.vocabAudio[soundKey] || this.sectionAudio[soundKey]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    if (this.sectionAudio[sectionId]) {
+                        this.playSound(sectionId);
+                    } else {
+                        console.warn("No audio found for section:", sectionId);
+                    }
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize vocabulary audio buttons
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const word = this.querySelector('h3').textContent.toLowerCase();
+                    audioManager.playSound(word);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Initialize record button
+            document.querySelector('.record-btn').addEventListener('click', function() {
+                alert("Recording functionality would be implemented here in a real application");
+                this.innerHTML = '<i class="fas fa-microphone"></i> Recording...';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-microphone"></i> Record Your Answer';
+                }, 3000);
+            });
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // Preload important audio
+            function preloadAudio(url) {
+                const audio = new Audio();
+                audio.src = url;
+                audio.preload = 'auto';
+            }
+
+            // Preload first few vocabulary words for better UX
+            preloadAudio(audioManager.vocabAudio['mother']);
+            preloadAudio(audioManager.vocabAudio['father']);
+            preloadAudio(audioManager.vocabAudio['sister']);
+        });
+    </script>
+</body>
+</html>

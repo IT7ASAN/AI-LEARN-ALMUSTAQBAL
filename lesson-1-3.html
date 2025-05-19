@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 – Daily Routines | English Literacy Course</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Tables */
+        .routine-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .routine-table caption {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .routine-table th,
+        .routine-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--gray-medium);
+        }
+
+        .routine-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .routine-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--green-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+        }
+
+        /* Practice Cards */
+        .practice-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .practice-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .practice-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .practice-item.selected {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        .practice-item.correct {
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+
+        .practice-item.incorrect {
+            border-color: #e74c3c;
+            background-color: #ffebee;
+        }
+
+        .practice-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        /* Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 10px;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(44, 90, 125, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-next {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-next:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Writing Practice */
+        .writing-practice {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .writing-card {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .writing-line {
+            height: 2px;
+            background: var(--gray-medium);
+            margin: 10px 0;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Encouragement Section */
+        .encouragement-section {
+            text-align: center;
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+
+        /* Feedback Message */
+        .feedback-message {
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin: 10px 0;
+            text-align: center;
+            display: none;
+        }
+
+        .feedback-correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+
+        .feedback-incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-modal-content {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--border-radius);
+        }
+
+        /* Game Time Section */
+        .game-time-section {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .game-column {
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        .game-column h4 {
+            margin-bottom: 10px;
+        }
+
+        .game-drop-area {
+            min-height: 100px;
+            border: 2px dashed var(--gray-medium);
+            border-radius: var(--border-radius);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .game-card {
+            background-color: var(--secondary-light);
+            border-radius: var(--border-radius);
+            padding: 8px 12px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .game-card:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .game-card.placed {
+            background-color: #a5d6a7;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .practice-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-actions {
+                flex-direction: column;
+            }
+
+            .section-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .routine-table {
+                font-size: 0.9rem;
+            }
+
+            .routine-table th,
+            .routine-table td {
+                padding: 8px;
+            }
+            
+            .dialogue-line {
+                flex-direction: column;
+            }
+            
+            .dialogue-speaker {
+                margin-bottom: 3px;
+            }
+
+            .writing-practice {
+                flex-direction: column;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 3 – Daily Routines</h2>
+            <p>Learn vocabulary for daily activities and how to talk about your daily routine.</p>
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Daily routine with clock and activities" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Understand and use vocabulary for common daily activities</li>
+                        <li>Talk about your daily routine using simple sentences</li>
+                        <li>Practice sequencing activities in the correct order</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Calendar">🗓️</span> 1. Vocabulary: Daily Activities</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Common daily activities:</p>
+                    
+                    <table class="routine-table" aria-label="Daily activities with example sentences">
+                        <caption>Daily Activities and Examples</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Activity</th>
+                                <th scope="col">Example Sentence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wake up</td>
+                                <td>I wake up at 7:00 AM.</td>
+                            </tr>
+                            <tr>
+                                <td>Brush teeth</td>
+                                <td>I brush my teeth after I wake up.</td>
+                            </tr>
+                            <tr>
+                                <td>Eat breakfast</td>
+                                <td>I eat breakfast at 8:00 AM.</td>
+                            </tr>
+                            <tr>
+                                <td>Go to school</td>
+                                <td>I go to school at 9:00 AM.</td>
+                            </tr>
+                            <tr>
+                                <td>Study</td>
+                                <td>I study in the classroom.</td>
+                            </tr>
+                            <tr>
+                                <td>Eat lunch</td>
+                                <td>I eat lunch at 1:00 PM.</td>
+                            </tr>
+                            <tr>
+                                <td>Go home</td>
+                                <td>I go home at 3:00 PM.</td>
+                            </tr>
+                            <tr>
+                                <td>Watch TV</td>
+                                <td>I watch TV in the evening.</td>
+                            </tr>
+                            <tr>
+                                <td>Eat dinner</td>
+                                <td>I eat dinner at 7:00 PM.</td>
+                            </tr>
+                            <tr>
+                                <td>Go to bed</td>
+                                <td>I go to bed at 9:00 PM.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Point to the correct picture for each action:</p>
+                        <div class="practice-grid">
+                            <div class="practice-item" tabindex="0" role="button" data-activity="wake up">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Wake up" aria-hidden="true">
+                                <p>Wake up</p>
+                            </div>
+                            <div class="practice-item" tabindex="0" role="button" data-activity="brush teeth">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Brush teeth" aria-hidden="true">
+                                <p>Brush teeth</p>
+                            </div>
+                            <div class="practice-item" tabindex="0" role="button" data-activity="eat breakfast">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Eat breakfast" aria-hidden="true">
+                                <p>Eat breakfast</p>
+                            </div>
+                            <div class="practice-item" tabindex="0" role="button" data-activity="go to school">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Go to school" aria-hidden="true">
+                                <p>Go to school</p>
+                            </div>
+                        </div>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order of Activities Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Puzzle">🧩</span> 2. Order of Activities</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Put these activities in the correct order:</p>
+                    <ol class="activity-order" style="margin-left: 30px;">
+                        <li>Wake up</li>
+                        <li>
+                            <select class="activity-select" style="padding: 5px; border-radius: var(--border-radius); margin-left: 10px;">
+                                <option value="">Select activity</option>
+                                <option value="brush">Brush teeth</option>
+                                <option value="breakfast">Eat breakfast</option>
+                                <option value="school">Go to school</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="activity-select" style="padding: 5px; border-radius: var(--border-radius); margin-left: 10px;">
+                                <option value="">Select activity</option>
+                                <option value="brush">Brush teeth</option>
+                                <option value="breakfast">Eat breakfast</option>
+                                <option value="school">Go to school</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="activity-select" style="padding: 5px; border-radius: var(--border-radius); margin-left: 10px;">
+                                <option value="">Select activity</option>
+                                <option value="brush">Brush teeth</option>
+                                <option value="breakfast">Eat breakfast</option>
+                                <option value="school">Go to school</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <div class="feedback-message"></div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Practice:</h3>
+                        <p>Use pictures or flashcards to arrange activities in order.</p>
+                        <button class="btn btn-secondary check-order-btn" style="min-width: auto; margin-top: 10px;">
+                            <i class="fas fa-check"></i> Check Order
+                        </button>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Speaking Practice Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Speaking">👄</span> 3. Speaking Practice</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Use simple sentences to talk about your routine:</p>
+                    <ul style="margin-left: 30px;">
+                        <li>"I wake up at 7:00."</li>
+                        <li>"I eat breakfast at 8:00."</li>
+                        <li>"I go to school at 9:00."</li>
+                    </ul>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Tell your routine in 3–4 steps.</p>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <button class="btn btn-secondary record-btn" style="min-width: auto;">
+                                <i class="fas fa-microphone"></i> Record Your Answer
+                            </button>
+                            <button class="btn btn-primary listen-example-btn" style="min-width: auto;">
+                                <i class="fas fa-play"></i> Listen to Example
+                            </button>
+                        </div>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Short Dialogue Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Dialogue">👥</span> 4. Short Dialogue</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Example conversation:</p>
+                    
+                    <div class="dialogue-card">
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">A:</div>
+                            <div>What do you do in the morning?</div>
+                        </div>
+                        <div class="dialogue-line">
+                            <div class="dialogue-speaker">B:</div>
+                            <div>I brush my teeth and eat breakfast.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Practice with a partner.</p>
+                        <button class="btn btn-primary pair-practice-btn" style="min-width: auto; margin-top: 10px;">
+                            <i class="fas fa-users"></i> Start Pair Practice
+                        </button>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Listening Activity Section -->
+            <!-- <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 5. Listening Activity</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Teacher says the activity, students match with picture.</p>
+                    <p><em>Example:</em> "Brush your teeth" → student points to picture.</p>
+                    
+                    <div class="practice-card">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Activity:</h3>
+                        <p>Listen and select the correct picture:</p>
+                        <div class="practice-grid">
+                            <div class="practice-item" tabindex="0" role="button" data-activity="wake up">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Wake up" aria-hidden="true">
+                                <p>?</p>
+                            </div>
+                            <div class="practice-item" tabindex="0" role="button" data-activity="brush teeth">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Brush teeth" aria-hidden="true">
+                                <p>?</p>
+                            </div>
+                            <div class="practice-item" tabindex="0" role="button" data-activity="eat breakfast">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Eat breakfast" aria-hidden="true">
+                                <p>?</p>
+                            </div>
+                            <div class="practice-item" tabindex="0" role="button" data-activity="go to school">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Go to school" aria-hidden="true">
+                                <p>?</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary play-audio-btn" style="margin-top: 15px;">
+                            <i class="fas fa-volume-up"></i> Play Audio
+                        </button>
+                        <div class="feedback-message"></div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Writing Practice Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✏️</span> 6. Writing Practice</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Write or trace the following:</p>
+                    
+                    <div class="writing-practice">
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">Wake up</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">Eat breakfast</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">Go to school</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                        <div class="writing-card">
+                            <p style="font-size: 1.5rem;">Go to bed</p>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                            <div class="writing-line"></div>
+                        </div>
+                    </div>
+                    
+                    <p><span role="img" aria-label="Checkmark">✅</span> Encourage repetition and drawing the activity.</p>
+                </div>
+            </section>
+
+            <!-- Game Time Section -->
+            <!-- <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🎮</span> 7. Game Time – Routine Relay</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p>Students run to match cards to the right time of day.</p>
+                    <p><em>Example:</em> Card says "Brush teeth" → student puts it under "Morning".</p>
+                    
+                    <div class="game-time-section">
+                        <h3><span role="img" aria-label="Checkmark">✅</span> Game Setup:</h3>
+                        <div class="game-grid">
+                            <div class="game-column" data-time="morning">
+                                <h4>Morning</h4>
+                                <div class="game-drop-area"></div>
+                            </div>
+                            <div class="game-column" data-time="afternoon">
+                                <h4>Afternoon</h4>
+                                <div class="game-drop-area"></div>
+                            </div>
+                            <div class="game-column" data-time="evening">
+                                <h4>Evening</h4>
+                                <div class="game-drop-area"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <p>Activity Cards:</p>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                                <div class="game-card" data-time="morning">Wake up</div>
+                                <div class="game-card" data-time="morning">Brush teeth</div>
+                                <div class="game-card" data-time="morning">Eat breakfast</div>
+                                <div class="game-card" data-time="morning">Go to school</div>
+                                <div class="game-card" data-time="afternoon">Eat lunch</div>
+                                <div class="game-card" data-time="afternoon">Go home</div>
+                                <div class="game-card" data-time="evening">Eat dinner</div>
+                                <div class="game-card" data-time="evening">Go to bed</div>
+                            </div>
+                        </div>
+                        <div class="feedback-message"></div>
+                        <button class="btn btn-primary check-game-btn" style="margin-top: 15px;">
+                            <i class="fas fa-check"></i> Check Answers
+                        </button>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-headphones"></i> Listen to Daily Routines
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-gamepad"></i> Play Matching Game
+                </button>
+            </div>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📋</span> 8. Recap & Homework</h2>
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button class="section-btn section-btn-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        <i class="fas fa-video"></i> Watch Video
+                    </button>
+                </div>
+                <div class="section-content">
+                    <p><strong>Today we learned:</strong></p>
+                    <ul>
+                        <li>Vocabulary for daily routines</li>
+                        <li>How to describe your routine</li>
+                        <li>How to order your activities</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Draw and label 3 activities you do every day</li>
+                            <li>Tell your family your daily routine in English</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="encouragement-section">
+                <h2 class="section-title"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.2rem;"><span role="img" aria-label="Clapping Hands">👏</span> You did a great job!</p>
+                    <p>Keep practicing your daily routine in English.</p>
+                    <p style="margin-top: 10px;">You're learning fast – well done! <span role="img" aria-label="Sun">🌞</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <div class="action-buttons" style="margin-top: 20px;">
+                <a href="lesson-4.html" class="btn btn-next">
+                    <i class="fas fa-arrow-right"></i> Next Lesson: Family and Relationships
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container">
+                <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Audio for daily activities
+            const activityAudios = {
+                'wake up': 'https://www.soundjay.com/human/sounds/snoring-01.mp3',
+                'brush teeth': 'https://www.soundjay.com/human/sounds/brushing-teeth-1.mp3',
+                'eat breakfast': 'https://www.soundjay.com/human/sounds/eating-01.mp3',
+                'go to school': 'https://www.soundjay.com/mechanical/sounds/school-bell-01.mp3',
+                'go to bed': 'https://www.soundjay.com/human/sounds/snoring-01.mp3',
+                'listen': 'https://www.soundjay.com/buttons/sounds/button-21.mp3'
+            };
+            
+            // Video modal functionality
+            const videoModal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+            const videoBtns = document.querySelectorAll('.section-btn-video');
+            const closeModal = document.querySelector('.close-modal');
+            
+            videoBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoUrl = this.getAttribute('data-video');
+                    videoFrame.src = videoUrl;
+                    videoModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                videoFrame.src = '';
+                videoModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    videoFrame.src = '';
+                    videoModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Play audio for section buttons
+            const listenButtons = document.querySelectorAll('.section-btn-audio');
+            listenButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const audio = new Audio(activityAudios['listen']);
+                    audio.play();
+                    
+                    // Visual feedback
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+            
+            // Vocabulary practice items
+            const practiceItems = document.querySelectorAll('.practice-item[data-activity]');
+            practiceItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const activity = this.getAttribute('data-activity');
+                    
+                    // Play audio for the activity
+                    if (activityAudios[activity]) {
+                        const audio = new Audio(activityAudios[activity]);
+                        audio.play();
+                    }
+                    
+                    // Visual feedback
+                    this.classList.add('selected');
+                    setTimeout(() => {
+                        this.classList.remove('selected');
+                    }, 500);
+                });
+            });
+            
+            // Order of activities check
+            const checkOrderBtn = document.querySelector('.check-order-btn');
+            if (checkOrderBtn) {
+                checkOrderBtn.addEventListener('click', function() {
+                    const selects = document.querySelectorAll('.activity-select');
+                    const feedback = this.nextElementSibling;
+                    let allSelected = true;
+                    let correctOrder = true;
+                    
+                    selects.forEach((select, index) => {
+                        if (!select.value) {
+                            allSelected = false;
+                        }
+                        
+                        // Check if order is correct (brush teeth -> eat breakfast -> go to school)
+                        if (index === 0 && select.value !== 'brush') {
+                            correctOrder = false;
+                        } else if (index === 1 && select.value !== 'breakfast') {
+                            correctOrder = false;
+                        } else if (index === 2 && select.value !== 'school') {
+                            correctOrder = false;
+                        }
+                    });
+                    
+                    if (!allSelected) {
+                        feedback.textContent = "Please select an activity for each step.";
+                        feedback.className = 'feedback-message feedback-incorrect';
+                    } else if (!correctOrder) {
+                        feedback.textContent = "Not quite the right order. Try again!";
+                        feedback.className = 'feedback-message feedback-incorrect';
+                    } else {
+                        feedback.textContent = "Correct! This is the right order for a morning routine.";
+                        feedback.className = 'feedback-message feedback-correct';
+                    }
+                    
+                    feedback.style.display = 'block';
+                });
+            }
+            
+            // Pair practice button
+            const pairPracticeBtn = document.querySelector('.pair-practice-btn');
+            if (pairPracticeBtn) {
+                pairPracticeBtn.addEventListener('click', function() {
+                    const feedback = this.nextElementSibling;
+                    feedback.textContent = "Find a partner and take turns practicing the dialogue about daily routines!";
+                    feedback.className = 'feedback-message feedback-correct';
+                    feedback.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        feedback.style.display = 'none';
+                    }, 3000);
+                });
+            }
+            
+            // Listening activity
+            const playAudioBtn = document.querySelector('.play-audio-btn');
+            if (playAudioBtn) {
+                playAudioBtn.addEventListener('click', function() {
+                    const feedback = this.nextElementSibling;
+                    const activities = ['wake up', 'brush teeth', 'eat breakfast', 'go to school'];
+                    const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+                    const audio = new Audio(activityAudios[randomActivity]);
+                    audio.play();
+                    
+                    feedback.textContent = "Which activity was that? Click on the correct picture!";
+                    feedback.className = 'feedback-message';
+                    feedback.style.display = 'block';
+                    
+                    // Highlight the correct answer when clicked
+                    const items = document.querySelectorAll('.practice-item[data-activity]');
+                    items.forEach(item => {
+                        item.addEventListener('click', function() {
+                            const itemActivity = this.getAttribute('data-activity');
+                            if (itemActivity === randomActivity) {
+                                this.classList.add('correct');
+                                feedback.textContent = "Correct! Well done!";
+                                feedback.className = 'feedback-message feedback-correct';
+                            } else {
+                                this.classList.add('incorrect');
+                                feedback.textContent = "Try again! Listen carefully.";
+                                feedback.className = 'feedback-message feedback-incorrect';
+                            }
+                            
+                            setTimeout(() => {
+                                this.classList.remove('correct', 'incorrect');
+                            }, 2000);
+                        });
+                    });
+                });
+            }
+            
+            // Record button
+            const recordBtn = document.querySelector('.record-btn');
+            if (recordBtn) {
+                recordBtn.addEventListener('click', function() {
+                    const feedback = this.parentElement.nextElementSibling;
+                    feedback.textContent = "Recording... Say your daily routine in English (3-4 sentences).";
+                    feedback.className = 'feedback-message';
+                    feedback.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        feedback.textContent = "Recording complete! Practice again to improve.";
+                        feedback.className = 'feedback-message feedback-correct';
+                    }, 3000);
+                });
+            }
+            
+            // Listen to example button
+            const listenExampleBtn = document.querySelector('.listen-example-btn');
+            if (listenExampleBtn) {
+                listenExampleBtn.addEventListener('click', function() {
+                    const feedback = this.parentElement.nextElementSibling;
+                    const exampleAudio = new Audio('https://www.soundjay.com/human/sounds/morning-routine-01.mp3');
+                    exampleAudio.play();
+                    
+                    feedback.textContent = "Example: 'I wake up at 7:00. I eat breakfast at 8:00. I go to school at 9:00.'";
+                    feedback.className = 'feedback-message feedback-correct';
+                    feedback.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        feedback.style.display = 'none';
+                    }, 5000);
+                });
+            }
+            
+            // Game time functionality
+            const gameCards = document.querySelectorAll('.game-card');
+            const dropAreas = document.querySelectorAll('.game-drop-area');
+            const checkGameBtn = document.querySelector('.check-game-btn');
+            
+            let draggedCard = null;
+            
+            gameCards.forEach(card => {
+                card.addEventListener('dragstart', function() {
+                    draggedCard = this;
+                    setTimeout(() => {
+                        this.style.opacity = '0.4';
+                    }, 0);
+                });
+                
+                card.addEventListener('dragend', function() {
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                        draggedCard = null;
+                    }, 0);
+                });
+            });
+            
+            dropAreas.forEach(area => {
+                area.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = 'rgba(0,0,0,0.1)';
+                });
+                
+                area.addEventListener('dragleave', function() {
+                    this.style.backgroundColor = '';
+                });
+                
+                area.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '';
+                    
+                    if (draggedCard) {
+                        // Check if the card is in the correct time category
+                        const cardTime = draggedCard.getAttribute('data-time');
+                        const areaTime = this.parentElement.getAttribute('data-time');
+                        
+                        if (cardTime === areaTime) {
+                            this.appendChild(draggedCard);
+                            draggedCard.classList.add('placed');
+                        } else {
+                            const feedback = document.querySelector('.game-time-section .feedback-message');
+                            feedback.textContent = "This activity doesn't belong here. Try again!";
+                            feedback.className = 'feedback-message feedback-incorrect';
+                            feedback.style.display = 'block';
+                        }
+                    }
+                });
+            });
+            
+            // Check game answers
+            if (checkGameBtn) {
+                checkGameBtn.addEventListener('click', function() {
+                    const feedback = this.previousElementSibling;
+                    const placedCards = document.querySelectorAll('.game-card.placed');
+                    const totalCards = document.querySelectorAll('.game-card').length;
+                    
+                    if (placedCards.length === totalCards) {
+                        feedback.textContent = "Perfect! All activities are in the correct time of day.";
+                        feedback.className = 'feedback-message feedback-correct';
+                    } else {
+                        feedback.textContent = `You placed ${placedCards.length} out of ${totalCards} cards. Keep trying!`;
+                        feedback.className = 'feedback-message feedback-incorrect';
+                    }
+                    
+                    feedback.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

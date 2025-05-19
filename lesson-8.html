@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 8 – My Future and My Goals | English Literacy Course</title>
+    <style>
+        :root {
+            --primary-color: #2c5a7d;
+            --primary-light: #3a7cb1;
+            --secondary-color: #f4b350;
+            --secondary-light: #f8c97c;
+            --accent-color: #e74c3c;
+            --light-color: #ffffff;
+            --dark-color: #2c3e50;
+            --gray-light: #f5f7fa;
+            --gray-medium: #e1e5eb;
+            --yellow-bg: #fff9e6;
+            --green-bg: #e8f5e9;
+            --purple-bg: #f8f4ff;
+            --gold-bg: #fff8e1;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .course-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .course-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .course-header h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .course-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .course-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Lesson Content */
+        .lesson-container {
+            padding: 40px 0;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Section Action Buttons */
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .section-btn-audio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-btn-video {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-btn-practice {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .section-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .vocab-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .vocab-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .vocab-card p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--gold-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dialogue Cards */
+        .dialogue-card {
+            background-color: var(--purple-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            display: flex;
+        }
+
+        .dialogue-speaker {
+            font-weight: bold;
+            min-width: 60px;
+            color: #7b1fa2;
+        }
+
+        /* Homework Section */
+        .homework-section {
+            background-color: var(--yellow-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .homework-title {
+            color: var(--dark-color);
+        }
+
+        /* Next Lesson Button */
+        .next-lesson-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .next-lesson-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .course-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .course-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .section-btn {
+                min-width: 100px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Accessibility Focus Styles */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Course Header -->
+    <header class="course-header">
+        <div class="container">
+            <h1>English Literacy Course</h1>
+            <h2>Unit 8 – My Future and My Goals</h2>
+            <p>Learn to talk about your dreams and future plans in English.</p>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Future goals and dreams" class="course-image">
+        </div>
+    </header>
+
+    <!-- Lesson Content -->
+    <main class="lesson-container">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Target">🎯</span> Lesson Objective</h2>
+                <div class="section-content">
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Talk about your dreams and future jobs</li>
+                        <li>Use future expressions: <em>I want to...</em>, <em>I will...</em></li>
+                        <li>Set personal goals using simple sentences</li>
+                    </ul>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="intro">
+                        <i class="fas fa-volume-up"></i> Read Objective
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="intro">
+                        <i class="fas fa-video"></i> Watch Introduction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Vocabulary Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Graduate">👩‍🎓</span> 1. Vocabulary: Jobs and Goals</h2>
+                <div class="section-content">
+                    <h3>💼 Jobs:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="teacher-audio">
+                            <span role="img" aria-label="Teacher" style="font-size: 2rem;">👩‍🏫</span>
+                            <h3>teacher</h3>
+                            <p>/ˈtiːtʃər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="doctor-audio">
+                            <span role="img" aria-label="Doctor" style="font-size: 2rem;">🩺</span>
+                            <h3>doctor</h3>
+                            <p>/ˈdɒktər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="artist-audio">
+                            <span role="img" aria-label="Artist" style="font-size: 2rem;">🎨</span>
+                            <h3>artist</h3>
+                            <p>/ˈɑːrtɪst/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="police-audio">
+                            <span role="img" aria-label="Police Officer" style="font-size: 2rem;">👮</span>
+                            <h3>police officer</h3>
+                            <p>/pəˈliːs ˈɒfɪsər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="driver-audio">
+                            <span role="img" aria-label="Driver" style="font-size: 2rem;">🚗</span>
+                            <h3>driver</h3>
+                            <p>/ˈdraɪvər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="chef-audio">
+                            <span role="img" aria-label="Chef" style="font-size: 2rem;">👨‍🍳</span>
+                            <h3>chef</h3>
+                            <p>/ʃef/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="engineer-audio">
+                            <span role="img" aria-label="Engineer" style="font-size: 2rem;">👷</span>
+                            <h3>engineer</h3>
+                            <p>/ˌendʒɪˈnɪər/</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 20px;">🎯 Goals Words:</h3>
+                    <div class="vocabulary-grid">
+                        <div class="vocab-card" data-audio="future-audio">
+                            <span role="img" aria-label="Future" style="font-size: 2rem;">🔮</span>
+                            <h3>future</h3>
+                            <p>/ˈfjuːtʃər/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="learn-audio">
+                            <span role="img" aria-label="Learn" style="font-size: 2rem;">📚</span>
+                            <h3>learn</h3>
+                            <p>/lɜːrn/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="skill-audio">
+                            <span role="img" aria-label="Skill" style="font-size: 2rem;">💪</span>
+                            <h3>skill</h3>
+                            <p>/skɪl/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="work-audio">
+                            <span role="img" aria-label="Work" style="font-size: 2rem;">💼</span>
+                            <h3>work</h3>
+                            <p>/wɜːrk/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="study-audio">
+                            <span role="img" aria-label="Study" style="font-size: 2rem;">📖</span>
+                            <h3>study</h3>
+                            <p>/ˈstʌdi/</p>
+                        </div>
+                        <div class="vocab-card" data-audio="dream-audio">
+                            <span role="img" aria-label="Dream" style="font-size: 2rem;">✨</span>
+                            <h3>dream</h3>
+                            <p>/driːm/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Match pictures of jobs with their names:</p>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                            <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                                <span role="img" aria-label="Doctor" style="font-size: 2rem;">🩺</span>
+                                <select style="margin-top: 10px; padding: 5px; border-radius: var(--border-radius);">
+                                    <option value="">Choose job</option>
+                                    <option value="doctor">doctor</option>
+                                    <option value="teacher">teacher</option>
+                                    <option value="chef">chef</option>
+                                </select>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                                <span role="img" aria-label="Teacher" style="font-size: 2rem;">👩‍🏫</span>
+                                <select style="margin-top: 10px; padding: 5px; border-radius: var(--border-radius);">
+                                    <option value="">Choose job</option>
+                                    <option value="doctor">doctor</option>
+                                    <option value="teacher">teacher</option>
+                                    <option value="chef">chef</option>
+                                </select>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                                <span role="img" aria-label="Chef" style="font-size: 2rem;">👨‍🍳</span>
+                                <select style="margin-top: 10px; padding: 5px; border-radius: var(--border-radius);">
+                                    <option value="">Choose job</option>
+                                    <option value="doctor">doctor</option>
+                                    <option value="teacher">teacher</option>
+                                    <option value="chef">chef</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="vocabulary">
+                        <i class="fas fa-volume-up"></i> Listen to Words
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="vocabulary">
+                        <i class="fas fa-video"></i> Watch Vocabulary Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Grammar Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Notebook">✍️</span> 2. Grammar Focus</h2>
+                <div class="section-content">
+                    <h3>📌 Future Expressions:</h3>
+                    <div style="background-color: var(--green-bg); padding: 15px; border-radius: var(--border-radius); margin: 15px 0;">
+                        <p><strong>I want to...</strong> → expresses a wish</p>
+                        <p><strong>I will...</strong> → expresses a plan or promise</p>
+                    </div>
+                    
+                    <h3>Examples:</h3>
+                    <ul>
+                        <li>I want to be a teacher.</li>
+                        <li>I will learn to cook.</li>
+                        <li>I want to help people.</li>
+                    </ul>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Write your own sentences:</p>
+                        <ol>
+                            <li>I want to <input type="text" style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius); width: 200px;">.</li>
+                            <li>I will <input type="text" style="padding: 5px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius); width: 200px;">.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="grammar">
+                        <i class="fas fa-volume-up"></i> Listen to Examples
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="grammar">
+                        <i class="fas fa-video"></i> Watch Grammar Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Reading Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Book">📖</span> 3. Reading Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Reading">📄</span> Reading Paragraph</h3>
+                        <p><strong>My name is Amal. I want to be a doctor. I will study hard. I want to help sick people. This is my dream.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Comprehension Questions</h3>
+                        <ol>
+                            <li>What job does Amal want?</li>
+                            <li>Why does she want that job?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="reading">
+                        <i class="fas fa-volume-up"></i> Listen to Passage
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="reading">
+                        <i class="fas fa-video"></i> Reading Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Writing Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Pencil">✍️</span> 4. Writing Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Example">📝</span> Example</h3>
+                        <p><strong>I want to be a driver.<br>I will learn the rules.<br>I want to help people travel.</strong></p>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Write 3 sentences about your future:</p>
+                        <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <textarea style="width: 100%; min-height: 100px; padding: 10px; border: 1px solid var(--gray-medium); border-radius: var(--border-radius);" placeholder="Example: I want to be a teacher. I will study English. I want to help children learn."></textarea>
+                        </div>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--primary-color);">🖼️ Use pictures or job flashcards to support students' ideas</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="writing">
+                        <i class="fas fa-volume-up"></i> Writing Tips
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="writing">
+                        <i class="fas fa-video"></i> Watch Writing Lesson
+                    </button>
+                </div>
+            </section>
+
+            <!-- Speaking Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Microphone">🗣️</span> 5. Speaking Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Dialogue">💬</span> Pair Activity</h3>
+                        <div class="dialogue-card">
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>What do you want to be?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>I want to be a chef.</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">A:</div>
+                                <div>Why?</div>
+                            </div>
+                            <div class="dialogue-line">
+                                <div class="dialogue-speaker">B:</div>
+                                <div>I like cooking.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Activity</h3>
+                        <p>Practice with a partner using these job cards:</p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user-graduate"></i> Teacher
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-user-md"></i> Doctor
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-paint-brush"></i> Artist
+                            </button>
+                            <button class="section-btn section-btn-practice" style="min-width: auto;">
+                                <i class="fas fa-car"></i> Driver
+                            </button>
+                        </div>
+                        <p style="margin-top: 10px; font-style: italic;">🎭 Share answers with classmates to build confidence</p>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="speaking">
+                        <i class="fas fa-volume-up"></i> Listen to Dialogues
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="speaking">
+                        <i class="fas fa-video"></i> Speaking Practice
+                    </button>
+                </div>
+            </section>
+
+            <!-- Listening Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Headphones">🎧</span> 6. Listening Practice</h2>
+                <div class="section-content">
+                    <div class="practice-section">
+                        <h3 class="practice-title"><span role="img" aria-label="Checkmark">✅</span> Task</h3>
+                        <p>Listen and point to the correct job picture:</p>
+                        
+                        <div class="vocabulary-grid" style="margin-top: 20px;">
+                            <div class="vocab-card" data-job="police">
+                                <span role="img" aria-label="Police Officer" style="font-size: 2rem;">👮</span>
+                                <h3>?</h3>
+                            </div>
+                            <div class="vocab-card" data-job="artist">
+                                <span role="img" aria-label="Artist" style="font-size: 2rem;">🎨</span>
+                                <h3>?</h3>
+                            </div>
+                            <div class="vocab-card" data-job="engineer">
+                                <span role="img" aria-label="Engineer" style="font-size: 2rem;">👷</span>
+                                <h3>?</h3>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 20px;">Example Prompts:</h3>
+                        <ol>
+                            <li>"He wants to be a police officer."</li>
+                            <li>"She will be an artist."</li>
+                            <li>"He wants to be an engineer."</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="listening">
+                        <i class="fas fa-volume-up"></i> Play Audio
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="listening">
+                        <i class="fas fa-video"></i> Listening Tips
+                    </button>
+                </div>
+            </section>
+
+            <!-- Fun Activity Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Game">🎨</span> 7. Fun Activity: Dream Poster</h2>
+                <div class="section-content">
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Create a poster about your dream job and future goals</li>
+                        <li>Include drawings or magazine cutouts</li>
+                        <li>Write sentences like: "I want to be a ____. I will ____."</li>
+                    </ul>
+                    
+                    <div class="practice-section">
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="width: 100%; height: 200px; background-color: var(--gray-light); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                                <span style="font-size: 2rem;">✏️</span>
+                                <p style="margin-top: 10px;">My Dream Poster</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Materials:</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Paper</span>
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Markers</span>
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Magazines</span>
+                            <span style="background: white; padding: 5px 10px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">Glue</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recap Section -->
+            <section class="section-card">
+                <h2 class="section-title"><span role="img" aria-label="Clipboard">📌</span> 8. Recap & Homework</h2>
+                <div class="section-content">
+                    <h3>Today We Learned:</h3>
+                    <ul>
+                        <li>Vocabulary for jobs and dreams</li>
+                        <li>How to say: <em>I want to...</em> / <em>I will...</em></li>
+                        <li>How to talk about the future</li>
+                    </ul>
+                    
+                    <div class="homework-section">
+                        <h3 class="homework-title"><span role="img" aria-label="Homework">📝</span> Homework:</h3>
+                        <ol>
+                            <li>Write 3 sentences about your dream job</li>
+                            <li>Ask someone at home: "What do you want to be?"</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section-actions">
+                    <button class="section-btn section-btn-audio read-section-btn" data-section="recap">
+                        <i class="fas fa-volume-up"></i> Listen to Recap
+                    </button>
+                    <button class="section-btn section-btn-video watch-video-btn" data-video="recap">
+                        <i class="fas fa-video"></i> Homework Help
+                    </button>
+                </div>
+            </section>
+
+            <!-- Encouragement Section -->
+            <section class="section-card" style="background-color: var(--primary-color); color: white;">
+                <h2 class="section-title" style="color: var(--secondary-color);"><span role="img" aria-label="Star">🌟</span> Encouragement</h2>
+                <div class="section-content">
+                    <p style="font-size: 1.1rem;"><span role="img" aria-label="Party Popper">🎉</span> <strong>Great job today!</strong></p>
+                    <p>You can <strong>make your dreams come true</strong>.</p>
+                    <p style="margin-top: 10px;"><strong>Keep learning and believe in yourself!</strong> <span role="img" aria-label="Strong">💪</span><span role="img" aria-label="Sparkles">✨</span></p>
+                </div>
+            </section>
+
+            <!-- Next Lesson Button -->
+            <a href="../../../course.html" class="next-lesson-btn">
+                <i class="fas fa-arrow-right"></i> Go to Next Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple audio management system
+            const audioManager = {
+                // Section audio files
+                sectionAudio: {
+                    'intro': 'https://example.com/audio/unit8-intro.mp3',
+                    'vocabulary': 'https://example.com/audio/unit8-vocabulary.mp3',
+                    'grammar': 'https://example.com/audio/unit8-grammar.mp3',
+                    'reading': 'https://example.com/audio/unit8-reading.mp3',
+                    'writing': 'https://example.com/audio/unit8-writing.mp3',
+                    'speaking': 'https://example.com/audio/unit8-speaking.mp3',
+                    'listening': 'https://example.com/audio/unit8-listening.mp3',
+                    'recap': 'https://example.com/audio/unit8-recap.mp3',
+                    // Vocabulary audio
+                    'teacher-audio': 'https://example.com/audio/teacher.mp3',
+                    'doctor-audio': 'https://example.com/audio/doctor.mp3',
+                    'artist-audio': 'https://example.com/audio/artist.mp3',
+                    'police-audio': 'https://example.com/audio/police.mp3',
+                    'driver-audio': 'https://example.com/audio/driver.mp3',
+                    'chef-audio': 'https://example.com/audio/chef.mp3',
+                    'engineer-audio': 'https://example.com/audio/engineer.mp3',
+                    'future-audio': 'https://example.com/audio/future.mp3',
+                    'learn-audio': 'https://example.com/audio/learn.mp3',
+                    'skill-audio': 'https://example.com/audio/skill.mp3',
+                    'work-audio': 'https://example.com/audio/work.mp3',
+                    'study-audio': 'https://example.com/audio/study.mp3',
+                    'dream-audio': 'https://example.com/audio/dream.mp3'
+                },
+                
+                // Video links
+                videoLinks: {
+                    'intro': 'https://youtube.com/unit8-intro',
+                    'vocabulary': 'https://youtube.com/unit8-vocabulary',
+                    'grammar': 'https://youtube.com/unit8-grammar',
+                    'reading': 'https://youtube.com/unit8-reading',
+                    'writing': 'https://youtube.com/unit8-writing',
+                    'speaking': 'https://youtube.com/unit8-speaking',
+                    'listening': 'https://youtube.com/unit8-listening',
+                    'recap': 'https://youtube.com/unit8-recap'
+                },
+                
+                // Current audio instance
+                currentAudio: null,
+                
+                // Play section audio
+                playSection: function(sectionId) {
+                    // Stop any currently playing audio
+                    if (this.currentAudio) {
+                        this.currentAudio.pause();
+                    }
+                    
+                    // Create new audio instance
+                    this.currentAudio = new Audio(this.sectionAudio[sectionId]);
+                    this.currentAudio.play().catch(e => console.error("Audio play failed:", e));
+                },
+                
+                // Open video
+                openVideo: function(videoId) {
+                    if (this.videoLinks[videoId]) {
+                        window.open(this.videoLinks[videoId], '_blank');
+                    } else {
+                        console.warn("No video link found for:", videoId);
+                    }
+                }
+            };
+
+            // Initialize section read buttons
+            document.querySelectorAll('.read-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    audioManager.playSection(sectionId);
+                    
+                    // Visual feedback
+                    this.classList.add('active');
+                    setTimeout(() => this.classList.remove('active'), 200);
+                });
+            });
+
+            // Initialize video buttons
+            document.querySelectorAll('.watch-video-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video');
+                    audioManager.openVideo(videoId);
+                });
+            });
+
+            // Vocabulary card clicks
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const audioId = this.getAttribute('data-audio');
+                    if (audioId) {
+                        audioManager.playSection(audioId);
+                    }
+                });
+            });
+
+            // Listening activity - job identification
+            const listeningBtn = document.querySelector('[data-section="listening"]');
+            if (listeningBtn) {
+                listeningBtn.addEventListener('click', function() {
+                    // Random jobs for demonstration
+                    const jobs = ['police', 'artist', 'engineer'];
+                    
+                    let currentIndex = 0;
+                    
+                    // Highlight job every 3 seconds
+                    const interval = setInterval(() => {
+                        // Remove highlight from all
+                        document.querySelectorAll('.vocab-card').forEach(card => {
+                            card.style.boxShadow = 'none';
+                        });
+                        
+                        if (currentIndex < jobs.length) {
+                            // Highlight current job
+                            const currentJob = jobs[currentIndex];
+                            const jobCard = document.querySelector(`[data-job="${currentJob}"]`);
+                            if (jobCard) {
+                                jobCard.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                            }
+                            currentIndex++;
+                        } else {
+                            clearInterval(interval);
+                        }
+                    }, 3000);
+                });
+            }
+
+            // Accessibility enhancements
+            document.querySelectorAll('[tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
